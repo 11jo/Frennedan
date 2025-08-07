@@ -1,15 +1,15 @@
-BACKUP ~frenmod/fren-backup~
+BACKUP ~Frennedan_NPC/backup~
 AUTHOR ~jastey@web.de~ //Nicolas Peters - darthsabe@web.de~
 
 VERSION ~1.03~
 
-AUTO_TRA ~frenmod\%s~
+AUTO_TRA ~Frennedan_NPC/Languages/%s~
 
-README ~frenmod\Liesmich.txt~
+README ~Frennedan_NPC/Readme/Liesmich.txt~
 
 LANGUAGE ~Deutsch~
          ~German~
-         ~frenmod\German\Setup.tra~
+         ~Frennedan_NPC\German\Setup.tra~
 
 BEGIN @1
 
@@ -63,120 +63,120 @@ COPY_EXISTING ~trigger.ids~ ~override~
   BUT_ONLY_IF_IT_CHANGES
 
 // copy portraits
-COPY ~frenmod/Portraits/fren00L.bmp~ ~override/fren00L.bmp~
-COPY ~frenmod/Portraits/fren00S.bmp~ ~override/fren00S.bmp~
-COPY ~frenmod/Portraits/fren01L.bmp~ ~override/fren01L.bmp~
-COPY ~frenmod/Portraits/fren01S.bmp~ ~override/fren01S.bmp~
-COPY ~frenmod/Portraits/fren02L.bmp~ ~override/fren02L.bmp~
-COPY ~frenmod/Portraits/fren02S.bmp~ ~override/fren02S.bmp~
-COPY ~frenmod/Portraits/fren03L.bmp~ ~override/fren03L.bmp~
-COPY ~frenmod/Portraits/fren03S.bmp~ ~override/fren03S.bmp~
-COPY ~frenmod/Portraits/fren04L.bmp~ ~override/fren04L.bmp~
-COPY ~frenmod/Portraits/fren04S.bmp~ ~override/fren04S.bmp~
-COPY ~frenmod/Portraits/fren05L.bmp~ ~override/fren05L.bmp~
-COPY ~frenmod/Portraits/fren05S.bmp~ ~override/fren05S.bmp~
-COPY ~frenmod/Portraits/fren06L.bmp~ ~override/fren06L.bmp~
-COPY ~frenmod/Portraits/fren06S.bmp~ ~override/fren06S.bmp~
-COPY ~frenmod/Portraits/fren07L.bmp~ ~override/fren07L.bmp~
-COPY ~frenmod/Portraits/fren07S.bmp~ ~override/fren07S.bmp~
-COPY ~frenmod/Portraits/fren08L.bmp~ ~override/fren08L.bmp~
-COPY ~frenmod/Portraits/fren08S.bmp~ ~override/fren08S.bmp~
-COPY ~frenmod/Portraits/fren09L.bmp~ ~override/fren09L.bmp~
-COPY ~frenmod/Portraits/fren09S.bmp~ ~override/fren09S.bmp~
+COPY ~Frennedan_NPC/Portraits/fren00L.bmp~ ~override/fren00L.bmp~
+COPY ~Frennedan_NPC/Portraits/fren00S.bmp~ ~override/fren00S.bmp~
+COPY ~Frennedan_NPC/Portraits/fren01L.bmp~ ~override/fren01L.bmp~
+COPY ~Frennedan_NPC/Portraits/fren01S.bmp~ ~override/fren01S.bmp~
+COPY ~Frennedan_NPC/Portraits/fren02L.bmp~ ~override/fren02L.bmp~
+COPY ~Frennedan_NPC/Portraits/fren02S.bmp~ ~override/fren02S.bmp~
+COPY ~Frennedan_NPC/Portraits/fren03L.bmp~ ~override/fren03L.bmp~
+COPY ~Frennedan_NPC/Portraits/fren03S.bmp~ ~override/fren03S.bmp~
+COPY ~Frennedan_NPC/Portraits/fren04L.bmp~ ~override/fren04L.bmp~
+COPY ~Frennedan_NPC/Portraits/fren04S.bmp~ ~override/fren04S.bmp~
+COPY ~Frennedan_NPC/Portraits/fren05L.bmp~ ~override/fren05L.bmp~
+COPY ~Frennedan_NPC/Portraits/fren05S.bmp~ ~override/fren05S.bmp~
+COPY ~Frennedan_NPC/Portraits/fren06L.bmp~ ~override/fren06L.bmp~
+COPY ~Frennedan_NPC/Portraits/fren06S.bmp~ ~override/fren06S.bmp~
+COPY ~Frennedan_NPC/Portraits/fren07L.bmp~ ~override/fren07L.bmp~
+COPY ~Frennedan_NPC/Portraits/fren07S.bmp~ ~override/fren07S.bmp~
+COPY ~Frennedan_NPC/Portraits/fren08L.bmp~ ~override/fren08L.bmp~
+COPY ~Frennedan_NPC/Portraits/fren08S.bmp~ ~override/fren08S.bmp~
+COPY ~Frennedan_NPC/Portraits/fren09L.bmp~ ~override/fren09L.bmp~
+COPY ~Frennedan_NPC/Portraits/fren09S.bmp~ ~override/fren09S.bmp~
 
 // copy charakter-script and creature-file
-COMPILE ~frenmod/fren.baf~
+COMPILE ~Frennedan_NPC/Baf/fren.baf~
 	USING ~~
-COPY ~frenmod/SHAPE.cre~ ~override/SHAPE.cre~
+COPY ~Frennedan_NPC/Cre/SHAPE.cre~ ~override/SHAPE.cre~
 SAY NAME1 @2
 SAY NAME2 @2
 SAY BIO @3
 
 // extend scripts
-EXTEND_BOTTOM ~VICONIA.bcs~ ~frenmod/vicon.bcs~
-EXTEND_BOTTOM ~UDDOOR2.bcs~ ~frenmod/UDDOOR2.bcs~
-EXTEND_BOTTOM ~UDDOOR3.bcs~ ~frenmod/UDDOOR3.bcs~
+EXTEND_BOTTOM ~VICONIA.bcs~ ~Frennedan_NPC/Baf/vicon.bcs~
+EXTEND_BOTTOM ~UDDOOR2.bcs~ ~Frennedan_NPC/Baf/UDDOOR2.bcs~
+EXTEND_BOTTOM ~UDDOOR3.bcs~ ~Frennedan_NPC/Baf/UDDOOR3.bcs~
 
 
 // copy spells and items
-COPY ~frenmod/Spells/frenm.spl~ ~override/frenm.spl~
+COPY ~Frennedan_NPC/Spells/frenm.spl~ ~override/frenm.spl~
 	SAY NAME1 @4
 	SAY NAME2 @4
-COPY ~frenmod/Spells/frenm2.spl~ ~override/frenm2.spl~
+COPY ~Frennedan_NPC/Spells/frenm2.spl~ ~override/frenm2.spl~
 	SAY NAME1 @5
 	SAY NAME2 @5
-COPY ~frenmod/Spells/frenm3.spl~ ~override/frenm3.spl~
+COPY ~Frennedan_NPC/Spells/frenm3.spl~ ~override/frenm3.spl~
 	SAY NAME1 @6
 	SAY NAME2 @6
-COPY ~frenmod/Spells/fren00.spl~ ~override/fren00.spl~
+COPY ~Frennedan_NPC/Spells/fren00.spl~ ~override/fren00.spl~
 	SAY NAME1 @4
 	SAY NAME2 @4
-COPY ~frenmod/Spells/fren01.spl~ ~override/fren01.spl~
+COPY ~Frennedan_NPC/Spells/fren01.spl~ ~override/fren01.spl~
 	SAY NAME1 @4
 	SAY NAME2 @4
-COPY ~frenmod/Spells/fren02.spl~ ~override/fren02.spl~
+COPY ~Frennedan_NPC/Spells/fren02.spl~ ~override/fren02.spl~
 	SAY NAME1 @4
 	SAY NAME2 @4
-COPY ~frenmod/Spells/fren03.spl~ ~override/fren03.spl~
+COPY ~Frennedan_NPC/Spells/fren03.spl~ ~override/fren03.spl~
 	SAY NAME1 @4
 	SAY NAME2 @4
-COPY ~frenmod/Spells/fren04.spl~ ~override/fren04.spl~
+COPY ~Frennedan_NPC/Spells/fren04.spl~ ~override/fren04.spl~
 	SAY NAME1 @4
 	SAY NAME2 @4
-COPY ~frenmod/Spells/fren05.spl~ ~override/fren05.spl~
+COPY ~Frennedan_NPC/Spells/fren05.spl~ ~override/fren05.spl~
 	SAY NAME1 @4
 	SAY NAME2 @4
-COPY ~frenmod/Spells/fren06.spl~ ~override/fren06.spl~
+COPY ~Frennedan_NPC/Spells/fren06.spl~ ~override/fren06.spl~
 	SAY NAME1 @4
 	SAY NAME2 @4
-COPY ~frenmod/Spells/fren07.spl~ ~override/fren07.spl~
+COPY ~Frennedan_NPC/Spells/fren07.spl~ ~override/fren07.spl~
 	SAY NAME1 @4
 	SAY NAME2 @4
-COPY ~frenmod/Spells/fren08.spl~ ~override/fren08.spl~
-COPY ~frenmod/Spells/fren09.spl~ ~override/fren09.spl~
-COPY ~frenmod/Spells/fren10.spl~ ~override/fren10.spl~
-COPY ~frenmod/Spells/fraufw02.spl~ ~override/fraufw02.spl~
-COPY ~frenmod/Spells/fraufw03.spl~ ~override/fraufw03.spl~
-COPY ~frenmod/Spells/fraufw04.spl~ ~override/fraufw04.spl~
-COPY ~frenmod/Spells/frmind.spl~ ~override/frmind.spl~
+COPY ~Frennedan_NPC/Spells/fren08.spl~ ~override/fren08.spl~
+COPY ~Frennedan_NPC/Spells/fren09.spl~ ~override/fren09.spl~
+COPY ~Frennedan_NPC/Spells/fren10.spl~ ~override/fren10.spl~
+COPY ~Frennedan_NPC/Spells/fraufw02.spl~ ~override/fraufw02.spl~
+COPY ~Frennedan_NPC/Spells/fraufw03.spl~ ~override/fraufw03.spl~
+COPY ~Frennedan_NPC/Spells/fraufw04.spl~ ~override/fraufw04.spl~
+COPY ~Frennedan_NPC/Spells/frmind.spl~ ~override/frmind.spl~
 
-COPY ~frenmod/Items/fren01.itm~ ~override/fren01.itm~
+COPY ~Frennedan_NPC/Items/fren01.itm~ ~override/fren01.itm~
 SAY NAME1 @7
 SAY NAME2 @7
 SAY DESC @8
 
-COPY ~frenmod/Items/fren02.itm~ ~override/fren02.itm~
+COPY ~Frennedan_NPC/Items/fren02.itm~ ~override/fren02.itm~
 SAY NAME1 @9
 SAY NAME2 @9
 SAY DESC @10
 
-COPY ~frenmod/Items/fren03.itm~ ~override/fren03.itm~
+COPY ~Frennedan_NPC/Items/fren03.itm~ ~override/fren03.itm~
 SAY NAME1 @11
 SAY NAME2 @9
 SAY DESC @12
 
-COPY ~frenmod/Items/fren04.itm~ ~override/fren04.itm~
+COPY ~Frennedan_NPC/Items/fren04.itm~ ~override/fren04.itm~
 SAY NAME1 @9
 SAY NAME2 @9
 SAY DESC @13
 
-COPY ~frenmod/Items/frenm.itm~ ~override/frenm.itm~
+COPY ~Frennedan_NPC/Items/frenm.itm~ ~override/frenm.itm~
 
-COPY ~frenmod/Items/fren05.itm~ ~override/fren05.itm~
+COPY ~Frennedan_NPC/Items/fren05.itm~ ~override/fren05.itm~
 SAY NAME1 @14
 SAY NAME2 @14
 SAY DESC @15
 
-COPY ~frenmod/Items/fren06.itm~ ~override/fren06.itm~
+COPY ~Frennedan_NPC/Items/fren06.itm~ ~override/fren06.itm~
 SAY NAME1 @16
 SAY NAME2 @16
 SAY DESC @17
 
 
 // compile dialogues
-COMPILE ~frenmod/frenJ.d~
+COMPILE ~Frennedan_NPC/D/frenJ.d~
 USING ~~
-COMPILE ~frenmod/frenP.d~
+COMPILE ~Frennedan_NPC/D/frenP.d~
 USING ~~
 
 // append 2da entries
@@ -192,56 +192,56 @@ IF ~25POST~
 
 
 // Frennedan's side quest in the Underdark
-EXTEND_BOTTOM ~AR2200.bcs~ ~frenmod/Unterreich/AR2200.bcs~
-EXTEND_BOTTOM ~AR2100.bcs~ ~frenmod/Unterreich/AR2100.bcs~
-EXTEND_BOTTOM ~DWCITY.bcs~ ~frenmod/Unterreich/dwcity.bcs~
+EXTEND_BOTTOM ~AR2200.bcs~ ~Frennedan_NPC/Baf/AR2200.bcs~
+EXTEND_BOTTOM ~AR2100.bcs~ ~Frennedan_NPC/Baf/AR2100.bcs~
+EXTEND_BOTTOM ~DWCITY.bcs~ ~Frennedan_NPC/Baf/dwcity.bcs~
 
-COMPILE ~frenmod/Unterreich/frdrow01.baf~
+COMPILE ~Frennedan_NPC/Baf/frdrow01.baf~
 	USING ~~
-COMPILE ~frenmod/Unterreich/frdrow02.baf~
+COMPILE ~Frennedan_NPC/Baf/frdrow02.baf~
 	USING ~~
-COMPILE ~frenmod/Unterreich/frdrow03.baf~
+COMPILE ~Frennedan_NPC/Baf/frdrow03.baf~
 	USING ~~
-COMPILE ~frenmod/Unterreich/frdrow08.baf~
+COMPILE ~Frennedan_NPC/Baf/frdrow08.baf~
 	USING ~~
-COMPILE ~frenmod/Unterreich/frcut01.baf~
+COMPILE ~Frennedan_NPC/Baf/frcut01.baf~
 	USING ~~
-COMPILE ~frenmod/Unterreich/frdrow01.d~
+COMPILE ~Frennedan_NPC/D/frdrow01.d~
 	USING ~~
-COMPILE ~frenmod/Unterreich/frdrow02.d~
+COMPILE ~Frennedan_NPC/D/frdrow02.d~
 	USING ~~
-COMPILE ~frenmod/Unterreich/frdrow03.d~
+COMPILE ~Frennedan_NPC/D/frdrow03.d~
 	USING ~~
-COMPILE ~frenmod/Unterreich/frdrow04.d~
+COMPILE ~Frennedan_NPC/D/frdrow04.d~
 	USING ~~
-COMPILE ~frenmod/Unterreich/frdrow05.d~
+COMPILE ~Frennedan_NPC/D/frdrow05.d~
 	USING ~~
-COMPILE ~frenmod/Unterreich/frdrow06.d~
+COMPILE ~Frennedan_NPC/D/frdrow06.d~
 	USING ~~
-COMPILE ~frenmod/Unterreich/frdrow07.d~
+COMPILE ~Frennedan_NPC/D/frdrow07.d~
 	USING ~~
 
-COPY ~frenmod/Unterreich/frdrow01.cre~ ~override/frdrow01.cre~
+COPY ~Frennedan_NPC/Cre/frdrow01.cre~ ~override/frdrow01.cre~
 	SAY NAME1 @18
 	SAY NAME2 @18
-COPY ~frenmod/Unterreich/frdrow02.cre~ ~override/frdrow02.cre~
+COPY ~Frennedan_NPC/Cre/frdrow02.cre~ ~override/frdrow02.cre~
 	SAY NAME1 @19
 	SAY NAME2 @19
-COPY ~frenmod/Unterreich/frdrow03.cre~ ~override/frdrow03.cre~
+COPY ~Frennedan_NPC/Cre/frdrow03.cre~ ~override/frdrow03.cre~
 	SAY NAME1 @20
 	SAY NAME2 @20
-COPY ~frenmod/Unterreich/frdrow04.cre~ ~override/frdrow04.cre~
+COPY ~Frennedan_NPC/Cre/frdrow04.cre~ ~override/frdrow04.cre~
 	SAY NAME1 @21
 	SAY NAME2 @21
-COPY ~frenmod/Unterreich/frdrow05.cre~ ~override/frdrow05.cre~
+COPY ~Frennedan_NPC/Cre/frdrow05.cre~ ~override/frdrow05.cre~
 	SAY NAME1 @22
 	SAY NAME2 @22
-COPY ~frenmod/Unterreich/frdrow06.cre~ ~override/frdrow06.cre~
+COPY ~Frennedan_NPC/Cre/frdrow06.cre~ ~override/frdrow06.cre~
 	SAY NAME1 @23
 	SAY NAME2 @23
-COPY ~frenmod/Unterreich/frdrow07.cre~ ~override/frdrow07.cre~
+COPY ~Frennedan_NPC/Cre/frdrow07.cre~ ~override/frdrow07.cre~
 	SAY NAME1 @24
 	SAY NAME2 @24
-COPY ~frenmod/Unterreich/frdrow08.cre~ ~override/frdrow08.cre~
+COPY ~Frennedan_NPC/Cre/frdrow08.cre~ ~override/frdrow08.cre~
 	SAY NAME1 @25
 	SAY NAME2 @25
