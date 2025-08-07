@@ -1,0 +1,67 @@
+@1    = ~Frennedan-Mod fuer Baldur's Gate II~
+@2    = ~Frennedan~
+@3    = ~Das FRENNEDAN kein gewöhnlicher Mensch ist, habt Ihr inzwischen schon selbst herausgefunden - er ist ein Doppelgänger, dem Ihr auf Eurer Flucht aus der Gefangenschaft des Magiers Irenicus begegnet seid und ihm vor einem unbestimmten Ende bewahrt habt. Er war in einer Zelle aus Glas gefangen, wo er vermutlich zu Versuchs- und Beobachtungszwecken gehalten wurde. Frennedan spricht nicht gerne über diesen Vorfall und ist Euch anscheinend sehr dankbar für seine Befreiung...zumindest hat er Euch dies überschwenglich kundgetan. Seine Motive bleiben weiterhin im Dunklen, doch Ihr seid lieber vorsichtig in seiner Nähe, denn Ihr habt bisher nicht gerade gute Erfahrungen mit Doppelgängern gesammelt. Ihr habt zunächst einmal zugestimmt, ihn aus Irenicus Kerker und zur Freiheit zu verhelfen.~
+@4    = ~Gestalt verändern~
+@5    = ~Krallen verwenden~
+@6    = ~Gedanken wahrnehmen~
+@7    = ~Frennedans Rüstung~
+@8    = ~Diese Rüstung ist eine der wenigen persönlichen Besitztümer von Frennedan, dem Doppelgänger.
+
+Doppelgänger sind seltsame Wesen, die in der Lage sind, die Gestalt derer anzunehmen, denen sie begegnen.
+Diese natürliche Fähigkeit zur Mimikry machen sich Doppelgänger ausgezeichnet zunutze, um Hinterhalte zu legen, Fallen mit Ködern zu versehen und die Gesellschaft der humanoiden Völker zu unterwandern. Sie sind zwar nicht im eigentlichen Sinne böse, interessieren aber nur für sich selbst und betrachten alle anderen als Spielzeuge, die sie nach Belieben hintergehen und manipulieren können.
+In seiner wahren Gestalt sieht ein Doppelgänger mehr oder weniger humanoid aus. Die Haut ist bleich, haarlos und fühlt sich wie öliges Wildleder an. Die großen Glubschaugen sind weiß und haben keine sichtbaren Pupillen.
+
+Da Doppelgänger die Gestalt jedes humanoiden Wesens zwischen 1,20 m und 2,40 m Größe annehmen können, sind sie geborene Spione und Meuchelmörder. Doppelgänger sind gegen Schlaf und Bezauberungs- und Beeinflussungszauber immun.
+
+
+
+SPEZIFISCHE EIGENSCHAFTEN:
+
+Rüstungsklasse: 4
+Gewicht: 4
+Kann nur von Frennedan verwendet werden~
+@9    = ~Frennedans Krallen~
+@10   = ~Frennedans Krallen
+
+Doppelgänger sind schlank und wirken zerbrechlich, aber sie sind sehr zäh und haben eine unnatürliche Beweglichkeit und übermenschliche Stärke, die man ihren schlacksigen Gliedern nicht ansieht. Sie haben kräftige krallenbewährte Hände, mit denen sie ihre Opfer geradezu in Fetzen schneiden können.
+
+ETWO-Bonus: 2
+Schaden:    1W12+2 (Klingenwaffe)~
+@11   = ~ Frennedans Krallen~
+@12   = ~Frennedans Krallen
+
+Doppelgänger sind schlank und wirken zerbrechlich, aber sie sind sehr zäh und haben eine unnatürliche Beweglichkeit und übermenschliche Stärke, die man ihren schlacksigen Gliedern nicht ansieht. Sie haben kräftige krallenbewährte Hände, mit denen sie ihre Opfer geradezu in Fetzen schneiden können.
+
+ETWO-Bonus: 3
+Schaden:    1W12+3 (Klingenwaffe)~
+@13   = ~Frennedans Krallen
+
+Doppelgänger sind schlank und wirken zerbrechlich, aber sie sind sehr zäh und haben eine unnatürliche Beweglichkeit und übermenschliche Stärke, die man ihren schlacksigen Gliedern nicht ansieht. Sie haben kräftige krallenbewährte Hände, mit denen sie ihre Opfer geradezu in Fetzen schneiden können.
+
+ETWO-Bonus: 4
+Schaden:    1W12+4 (Klingenwaffe)~
+@14   = ~Adamantitkettenhemd +3~
+@15   = ~Adamantitkettenhemd +3
+Dieses Kettenhemd wurde von den Drow des Unterreichs gefertigt. Es ist so fein gewebt, dass man es unauffällig unter normaler Kleidung tragen kann. Es behindert seinen Träger in keiner Weise und ist so leicht, dass es auch Diebe und Krieger/Magier einsetzen können, ohne dass ihre Fähigkeiten eingeschränkt werden. Das Kettenhemd wurde zudem mit einer Legierung aus Adamantit, dem stärksten Metall der Welt, versehen, was die Rüstung fast unzerstörbar macht. Mächtige Dweomer verleihen ihr sowohl einen Schutz vor dem schädlichen Licht der Oberfläche, als auch vor magischer Energie.
+
+SPEZIFISCHE EIGENSCHAFTEN:
+
+Besondere Fähigkeiten: Der Träger erhält +20% Magieresistenz
+Rüstungsklasse: 2
+Gewicht: 12
+Kann nicht verwendet werden von:
+Druiden
+Magiern
+Kensai~
+@16   = ~Das Schwarze Buch~
+@17   = ~Das Schwarze Buch
+
+Das in einem schwarzen Umschlag eingeschlagene Buch wurde mit einer schwarzen Tinte geschrieben, die eine Düsternis auszustrahlen scheint. Das Buch scheint in einer Art Geheimschrift verfasst worden zu sein, die es jedem verschließt, den Inhalt des Buches zu verstehen, der nicht das Geheimnis kennt. Das als 'Schwarze Buch' bekannte Schriftwerk wurde aus Socere, der Akademie der Magier von Menzoberranzan, gestohlen. Ihr wurdet von der zweiten Tochter des Hauses Zerimh Dseldor-Xzor damit beauftragt, den Dieb des Buches und dieses selbst zu suchen.~
+@18   = ~Nilamar~
+@19   = ~Nabeyue~
+@20   = ~Mutter Oberin Lilfaeriza~
+@21   = ~Waffenmeister Riniryon~
+@22   = ~G'esstre~
+@23   = ~Informant Laszaer~
+@24   = ~Lerdros~
+@25   = ~Sordrel~

@@ -1,0 +1,20 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneID(Player1)
+	CreateCreature("FRDROW03",[1559.580],2)
+	CreateCreature("FRDROW05",[1601.639],3)
+	CreateCreature("FRDROW04",[1470.540],0)
+	CreateCreature("FRDROW06",[1411.690],9)
+	ActionOverride("Nabeyue",JumpToPoint([1379.808]))
+	JumpToPoint([1434.862])
+	MoveViewObject(Myself,4)
+	ActionOverride(Player2,JumpToPoint([1369.878]))
+	ActionOverride(Player3,JumpToPoint([1424.886]))
+	ActionOverride(Player4,JumpToPoint([1361.915]))
+	ActionOverride(Player5,JumpToPoint([1424.920]))
+	ActionOverride(Player6,JumpToPoint([1329.963]))
+	ActionOverride("Nabeyue",Wait(4))
+	ActionOverride("Nabeyue",StartDialogueNoSet(Myself))
+END

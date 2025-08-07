@@ -1,0 +1,8 @@
+IF
+	Global("FrennedanSordrelTalk","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanSordrelTalk","GLOBAL",2)
+		Wait(1)
+		StartDialogueNoSet(Player1)
+END

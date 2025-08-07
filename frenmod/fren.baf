@@ -1,0 +1,498 @@
+IF
+	Global("FrennedanFirstMeet","GLOBAL",0)
+	See(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanFirstMeet","GLOBAL",1)
+		StartDialogueNoSet(Player1)
+END
+
+
+IF
+	GlobalLT("FrennedanFirstMeet","GLOBAL",5)
+	PartyHasItem("MISC4P")
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanFirstMeet","GLOBAL",4)
+END
+
+
+IF
+	Global("FrennedanFlucht","GLOBAL",0)
+	InParty(Myself)
+	AreaCheck("AR0700")
+	See(Player1)
+	!StateCheck(Player1,STATE_SLEEPING)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanFlucht","GLOBAL",1)
+		StartDialogueNoSet(Player1)
+END
+
+
+IF
+	Global("FrennedanInteract01","GLOBAL",0)
+	InParty(Myself)
+	InParty("Edwin")
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanInteract01","GLOBAL",1)
+		SetGlobalTimer("FrennedanInteractEdwin","GLOBAL",THREE_DAYS)
+END
+
+
+IF
+	Global("FrennedanInteract01","GLOBAL",1)
+	InParty(Myself)
+	IsValidForPartyDialogue("Edwin")
+	GlobalTimerExpired("FrennedanInteractEdwin","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanInteract01","GLOBAL",2)
+		StartDialogueNoSet("Edwin")
+END
+
+
+IF
+	Global("FrennedanBrynnlaw","GLOBAL",0)
+	InParty(Myself)
+	AreaCheck("AR1600")
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanBrynnlaw","GLOBAL",1)
+		SetGlobalTimer("FrennedanInteractHC1","GLOBAL",120)
+END
+
+
+IF
+	Global("FrennedanBrynnlaw","GLOBAL",1)
+	GlobalTimerExpired("FrennedanInteractHC1","GLOBAL")
+	InParty(Myself)
+	CombatCounter(0)
+	!StateCheck(Player1,STATE_SLEEPING)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanBrynnlaw","GLOBAL",2)
+		StartDialogueNoSet(Player1)
+END
+
+
+IF
+	Global("FrennedanUnterreich","GLOBAL",0)
+	InParty(Myself)
+	AreaCheck("AR2100")
+	!StateCheck(Player1,STATE_SLEEPING)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanUnterreich","GLOBAL",1)
+		Wait(1)
+		StartDialogueNoSet(Player1)
+END
+
+
+IF
+	Global("FrennedanUnterreich","GLOBAL",2)
+	InParty(Myself)
+	AreaCheck("AR2102")
+	See(Player1)
+	!StateCheck(Player1,STATE_SLEEPING)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanUnterreich","GLOBAL",3)
+		StartDialogueNoSet(Player1)
+END
+
+
+IF
+	Global("FrennedanUnterreich","GLOBAL",5)
+	InParty(Myself)
+	See(Player1)
+	!StateCheck(Player1,STATE_SLEEPING)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
+END
+
+
+IF
+	Global("FrennedanUnterreich","GLOBAL",7)
+	InParty(Myself)
+	See(Player1)
+	!StateCheck(Player1,STATE_SLEEPING)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanUnterreich","GLOBAL",8)
+		StartDialogueNoSet(Player1)
+END
+
+
+IF
+	AttackedBy([PC.0.0],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+	Global("FrennedanSpeak","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("FrennedanSpeak","LOCALS",1)
+		SetGlobal("FMorph","GLOBAL",1)
+		ReallyForceSpellRES("fraufw02",Myself)
+		DisplayStringHead(Myself,"Was?! Ihr greift mich an?!")
+		Wait(2)
+		DisplayStringHead(Myself,"Dann werde ich euch alle töten, ihr Dummköpfe!")
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		SetGlobal("Frennedan","AR0603",2)
+		Enemy()
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		Polymorph(DOPPLEGANGER)
+		ChangeAIScript("WTASIGHT",DEFAULT)
+		SetInterrupt(TRUE)
+END
+
+
+IF
+	Global("FrennedanAufwertung","GLOBAL",0)
+	InParty(Myself)
+	XPGT(Player1,500000)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanAufwertung","GLOBAL",1)
+		ReallyForceSpellRES("fraufw03",Myself)
+		ReallyForceSpell(Myself,RED_PILLAR_VISUAL)
+END
+
+IF
+	Global("FrennedanAufwertung","GLOBAL",1)
+	InParty(Myself)
+	XPGT(Player1,1750000)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanAufwertung","GLOBAL",2)
+		ReallyForceSpellRES("fraufw04",Myself)
+		ReallyForceSpell(Myself,RED_PILLAR_VISUAL)
+END
+
+
+IF
+	See(NearestEnemyOf(Myself))
+	ActuallyInCombat()
+	!Global("FMorph","GLOBAL",1)
+	!Global("FrennedanSpeicher","GLOBAL",4)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("FMorph","GLOBAL",1)
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		ReallyForceSpellRES("fren00",Myself)		
+		Polymorph(DOPPLEGANGER)
+		SetPlayerSound(Myself,-1,MORALE)
+		SetPlayerSound(Myself,-1,HAPPY)
+		SetPlayerSound(Myself,-1,UNHAPPY_BREAKING_POINT)
+		SetPlayerSound(Myself,5884,DAMAGE)
+		SetPlayerSound(Myself,5885,DYING)
+		SetPlayerSound(Myself,5165,SELECT_COMMON1)
+		SetPlayerSound(Myself,5166,SELECT_COMMON2)
+		SetPlayerSound(Myself,5167,SELECT_COMMON3)
+		SetPlayerSound(Myself,-1,SELECT_COMMON4)
+		SetInterrupt(TRUE)
+END
+
+
+IF
+	!ActuallyInCombat()
+	Global("FMorph","GLOBAL",1)
+	Global("FrennedanSpeicher","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("FMorph","GLOBAL",0)
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		ReallyForceSpellRES("fren01",Myself)
+		Polymorph(FAT_MAN)
+		SetPlayerSound(Myself,-1,MORALE)
+		SetPlayerSound(Myself,-1,HAPPY)
+		SetPlayerSound(Myself,-1,UNHAPPY_BREAKING_POINT)
+		SetPlayerSound(Myself,38847,DAMAGE)
+		SetPlayerSound(Myself,38786,DYING)
+		SetPlayerSound(Myself,38783,SELECT_COMMON1)
+		SetPlayerSound(Myself,38784,SELECT_COMMON2)
+		SetPlayerSound(Myself,38785,SELECT_COMMON3)
+		SetPlayerSound(Myself,38781,SELECT_COMMON4)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!ActuallyInCombat()
+	Global("FMorph","GLOBAL",1)
+	Global("FrennedanSpeicher","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("FMorph","GLOBAL",2)
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		ReallyForceSpellRES("fren04",Myself)
+		Polymorph(BOY)
+		SetPlayerSound(Myself,-1,MORALE)
+		SetPlayerSound(Myself,-1,HAPPY)
+		SetPlayerSound(Myself,61567,UNHAPPY_BREAKING_POINT)
+		SetPlayerSound(Myself,61565,DAMAGE)
+		SetPlayerSound(Myself,61566,DYING)
+		SetPlayerSound(Myself,61561,SELECT_COMMON1)
+		SetPlayerSound(Myself,61562,SELECT_COMMON2)
+		SetPlayerSound(Myself,61563,SELECT_COMMON3)
+		SetPlayerSound(Myself,61564,SELECT_COMMON4)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!ActuallyInCombat()
+	Global("FMorph","GLOBAL",1)
+	Global("FrennedanSpeicher","GLOBAL",3)
+THEN
+	RESPONSE #20
+		SetInterrupt(FALSE)
+		SetGlobal("FMorph","GLOBAL",3)
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		ReallyForceSpellRES("fren01",Myself)
+		Polymorph(FAT_MAN)
+		SetPlayerSound(Myself,-1,MORALE)
+		SetPlayerSound(Myself,-1,HAPPY)
+		SetPlayerSound(Myself,-1,UNHAPPY_BREAKING_POINT)
+		SetPlayerSound(Myself,38847,DAMAGE)
+		SetPlayerSound(Myself,38786,DYING)
+		SetPlayerSound(Myself,38783,SELECT_COMMON1)
+		SetPlayerSound(Myself,38784,SELECT_COMMON2)
+		SetPlayerSound(Myself,38785,SELECT_COMMON3)
+		SetPlayerSound(Myself,38781,SELECT_COMMON4)
+		SetInterrupt(TRUE)
+	RESPONSE #10
+		SetInterrupt(FALSE)
+		SetGlobal("FMorph","GLOBAL",3)
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		ReallyForceSpellRES("fren02",Myself)
+		Polymorph(NOBLE_MAN)
+		SetPlayerSound(Myself,61841,MORALE)
+		SetPlayerSound(Myself,-1,HAPPY)
+		SetPlayerSound(Myself,61841,UNHAPPY_BREAKING_POINT)
+		SetPlayerSound(Myself,61839,DAMAGE)
+		SetPlayerSound(Myself,61840,DYING)
+		SetPlayerSound(Myself,61837,SELECT_COMMON1)
+		SetPlayerSound(Myself,61838,SELECT_COMMON2)
+		SetPlayerSound(Myself,-1,SELECT_COMMON3)
+		SetPlayerSound(Myself,-1,SELECT_COMMON4)
+		SetInterrupt(TRUE)
+	RESPONSE #20
+		SetInterrupt(FALSE)
+		SetGlobal("FMorph","GLOBAL",3)
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		ReallyForceSpellRES("fren03",Myself)
+		Polymorph(SLAVE)
+		SetPlayerSound(Myself,-1,MORALE)
+		SetPlayerSound(Myself,-1,HAPPY)
+		SetPlayerSound(Myself,-1,UNHAPPY_BREAKING_POINT)
+		SetPlayerSound(Myself,12552,DAMAGE)
+		SetPlayerSound(Myself,12553,DYING)
+		SetPlayerSound(Myself,4869,SELECT_COMMON1)
+		SetPlayerSound(Myself,4870,SELECT_COMMON2)
+		SetPlayerSound(Myself,4872,SELECT_COMMON3)
+		SetPlayerSound(Myself,-1,SELECT_COMMON4)
+		SetInterrupt(TRUE)
+	RESPONSE #20
+		SetInterrupt(FALSE)
+		SetGlobal("FMorph","GLOBAL",3)
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		ReallyForceSpellRES("fren04",Myself)
+		Polymorph(BOY)
+		SetPlayerSound(Myself,-1,MORALE)
+		SetPlayerSound(Myself,-1,HAPPY)
+		SetPlayerSound(Myself,61567,UNHAPPY_BREAKING_POINT)
+		SetPlayerSound(Myself,61565,DAMAGE)
+		SetPlayerSound(Myself,61566,DYING)
+		SetPlayerSound(Myself,61561,SELECT_COMMON1)
+		SetPlayerSound(Myself,61562,SELECT_COMMON2)
+		SetPlayerSound(Myself,61563,SELECT_COMMON3)
+		SetPlayerSound(Myself,61564,SELECT_COMMON4)
+		SetInterrupt(TRUE)
+	RESPONSE #10
+		SetInterrupt(FALSE)
+		SetGlobal("FMorph","GLOBAL",3)
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		ReallyForceSpellRES("fren05",Myself)
+		Polymorph(FIGHTER_MALE_ELF)
+		SetPlayerSound(Myself,-1,MORALE)
+		SetPlayerSound(Myself,-1,HAPPY)
+		SetPlayerSound(Myself,-1,UNHAPPY_BREAKING_POINT)
+		SetPlayerSound(Myself,12586,DAMAGE)
+		SetPlayerSound(Myself,12587,DYING)
+		SetPlayerSound(Myself,4941,SELECT_COMMON1)
+		SetPlayerSound(Myself,4942,SELECT_COMMON2)
+		SetPlayerSound(Myself,4943,SELECT_COMMON3)
+		SetPlayerSound(Myself,-1,SELECT_COMMON4)
+		SetInterrupt(TRUE)
+	RESPONSE #10
+		SetInterrupt(FALSE)
+		SetGlobal("FMorph","GLOBAL",3)
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		ReallyForceSpellRES("fren06",Myself)
+		Polymorph(HARLOT_WOMAN)
+		SetPlayerSound(Myself,-1,MORALE)
+		SetPlayerSound(Myself,-1,HAPPY)
+		SetPlayerSound(Myself,-1,UNHAPPY_BREAKING_POINT)
+		SetPlayerSound(Myself,12578,DAMAGE)
+		SetPlayerSound(Myself,12579,DYING)
+		SetPlayerSound(Myself,4922,SELECT_COMMON1)
+		SetPlayerSound(Myself,4921,SELECT_COMMON2)
+		SetPlayerSound(Myself,4923,SELECT_COMMON3)
+		SetPlayerSound(Myself,-1,SELECT_COMMON4)
+		SetInterrupt(TRUE)
+	RESPONSE #10
+		SetInterrupt(FALSE)
+		SetGlobal("FMorph","GLOBAL",3)
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		ReallyForceSpellRES("fren07",Myself)
+		Polymorph(THIEF_FEMALE_ELF)
+		SetPlayerSound(Myself,-1,MORALE)
+		SetPlayerSound(Myself,-1,HAPPY)
+		SetPlayerSound(Myself,-1,UNHAPPY_BREAKING_POINT)
+		SetPlayerSound(Myself,11075,DAMAGE)
+		SetPlayerSound(Myself,11076,DYING)
+		SetPlayerSound(Myself,11063,SELECT_COMMON1)
+		SetPlayerSound(Myself,11065,SELECT_COMMON2)
+		SetPlayerSound(Myself,11070,SELECT_COMMON3)
+		SetPlayerSound(Myself,-1,SELECT_COMMON4)
+		SetInterrupt(TRUE)
+END
+
+
+IF
+	Die()
+	GlobalLT("FrennedanSpeicher","GLOBAL",4)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanTod","GLOBAL",1)
+END
+
+
+IF
+	Die()
+	Global("FrennedanSpeicher","GLOBAL",4)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanTod","GLOBAL",2)
+END
+
+
+IF
+	Global("FrennedanTod","GLOBAL",1)
+	!Dead("frendan")
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanTod","GLOBAL",0)
+		ReallyForceSpellRES("fraufw02",Myself)
+		SetGlobal("FrennedanAufwertung","GLOBAL",0)
+END
+
+
+IF
+	Global("FrennedanTod","GLOBAL",2)
+	!Dead("frendan")
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanTod","GLOBAL",0)
+		ReallyForceSpellRES("frmind",Myself)
+END
+
+
+IF
+	Global("FrWaf","GLOBAL",1)
+	Global("FrennedanSpeicher","GLOBAL",3)
+	Global("FrennedanAufwertung","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("FrWaf","GLOBAL",0)
+		DestroyItem("fren02")
+		ReallyForceSpellRES("fraufw02",Myself)
+END
+
+
+IF
+	Global("FrWaf","GLOBAL",1)
+	Global("FrennedanSpeicher","GLOBAL",3)
+	Global("FrennedanAufwertung","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("FrWaf","GLOBAL",0)
+		DestroyItem("fren03")
+		ReallyForceSpellRES("fraufw03",Myself)
+END
+
+
+IF
+	Global("FrWaf","GLOBAL",1)
+	Global("FrennedanSpeicher","GLOBAL",3)
+	Global("FrennedanAufwertung","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("FrWaf","GLOBAL",0)
+		DestroyItem("fren04")
+		ReallyForceSpellRES("fraufw04",Myself)
+END
+
+
+IF
+	Global("FrWaf","GLOBAL",1)
+	Global("FrennedanSpeicher","GLOBAL",4)
+THEN
+	RESPONSE #100
+		SetGlobal("FrWaf","GLOBAL",0)
+		DestroyItem("MINDFLAY")
+		ReallyForceSpellRES("frmind",Myself)
+END
+
+
+IF
+	Global("FrennedanTalkHC","GLOBAL",0)
+	InParty(Myself)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanTalkHC","GLOBAL",1)
+		SetGlobalTimer("FrennedanHC1","GLOBAL",THREE_DAYS)
+END
+
+
+IF
+	Global("FrennedanTalkHC","GLOBAL",1)
+	IsValidForPartyDialogue("frendan")
+	See(Player1)
+	!StateCheck(Player1,STATE_SLEEPING)
+	!ActuallyInCombat()
+	GlobalTimerExpired("FrennedanHC1","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanTalkHC","GLOBAL",2)
+		StartDialogueNoSet(Player1)
+END
+
+
+IF
+	Global("FrennedanTalkHC","GLOBAL",3)
+	InParty(Myself)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanTalkHC","GLOBAL",4)
+		SetGlobalTimer("FrennedanHC2","GLOBAL",THREE_DAYS)
+END
+
+
+IF
+	Global("FrennedanTalkHC","GLOBAL",4)
+	IsValidForPartyDialogue("frendan")
+	See(Player1)
+	!StateCheck(Player1,STATE_SLEEPING)
+	!ActuallyInCombat()
+	GlobalTimerExpired("FrennedanHC2","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanTalkHC","GLOBAL",5)
+		StartDialogueNoSet(Player1)
+END

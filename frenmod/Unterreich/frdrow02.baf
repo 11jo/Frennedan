@@ -1,0 +1,23 @@
+IF
+	Global("FrennedanNabeyue","GLOBAL",2)
+	!Global("DrowCityHostile","GLOBAL",1)
+	LOS(Player1,15)
+	InParty("frendan")
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanNabeyue","GLOBAL",3)
+		StartDialogueNoSet(Player1)
+END
+
+
+IF
+	AreaCheck("AR2200")
+	Global("FrennedanAuftrag","GLOBAL",1)
+	!Global("DrowCityHostile","GLOBAL",1)
+	LOS(Player1,15)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanAuftrag","GLOBAL",2)
+		MoveToObject(Player1)
+		StartDialogueNoSet(Player1)
+END

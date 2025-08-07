@@ -1,0 +1,32 @@
+IF
+	Global("FrennedanOberinFirstTalk01","GLOBAL",0)
+	Dead("frdrow06")
+	GlobalLT("FrennedanSordrel","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanOberinFirstTalk01","GLOBAL",1)
+		Wait(1)
+		StartDialogueNoSet(Player1)
+END
+
+
+
+IF
+	Global("FrennedanOberinFirstTalk02","GLOBAL",0)
+	Global("FrennedanSordrel","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanOberinFirstTalk02","GLOBAL",1)
+		Wait(1)
+		StartDialogueNoSet(Player1)
+END
+
+
+IF
+	Global("FrennedanOberinFirstTalk03","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanOberinFirstTalk03","GLOBAL",2)
+		Wait(2)
+		StartDialogueNoSet(Player1)
+END

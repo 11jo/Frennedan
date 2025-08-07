@@ -1,0 +1,96 @@
+// Lerdros, der Snirfneblie / Sordrel, der Zauberer
+BEGIN frdrow07
+
+IF ~Global("FrennedanSordrelTalk","GLOBAL",0)~ THEN BEGIN 0
+	SAY @0
+	IF ~~ THEN REPLY @1 GOTO 1
+	IF ~~ THEN REPLY @2 GOTO 2
+	IF ~~ THEN REPLY @3 GOTO 3
+	IF ~~ THEN REPLY @4 EXIT
+END
+
+
+IF ~~ THEN BEGIN 1
+	SAY @5 
+	IF ~CheckStatGT(Player1,14,INT)~ THEN REPLY @6 GOTO 4
+	IF ~~ THEN REPLY @7 GOTO 5
+	IF ~~ THEN REPLY @8 GOTO 6
+END
+
+
+IF ~~ THEN BEGIN 2
+	SAY @9 
+	IF ~~ THEN REPLY @10 GOTO 1
+	IF ~~ THEN REPLY @3 GOTO 3
+	IF ~~ THEN REPLY @4 EXIT
+END
+
+
+IF ~~ THEN BEGIN 3
+	SAY @11
+	IF ~~ THEN REPLY @12 GOTO 0
+	IF ~~ THEN REPLY @13 GOTO 7
+	IF ~~ THEN REPLY @8 GOTO 6
+END
+
+
+IF ~~ THEN BEGIN 4
+	SAY @14
+	IF ~~ THEN DO ~SetGlobal("FrennedanSordrelTalk","GLOBAL",1) CreateVisualEffectObject("SPFLESHS",Myself) ChangeAnimation("FRDROW08") Wait(1) StartDialogueNoSet(Player1)~ EXIT
+END
+
+
+IF ~~ THEN BEGIN 5
+	SAY @15
+	IF ~~ THEN REPLY @16 GOTO 8
+	IF ~~ THEN REPLY @17 EXIT
+	IF ~~ THEN REPLY @3 GOTO 3
+END
+
+
+IF ~~ THEN BEGIN 6
+	SAY @18
+	IF ~~ THEN EXIT
+END
+
+
+IF ~~ THEN BEGIN 7
+	SAY @19
+	IF ~~ THEN REPLY @20 GOTO 5
+	IF ~~ THEN REPLY @21 GOTO 1
+	IF ~~ THEN REPLY @17 EXIT
+END
+
+
+IF ~~ THEN BEGIN 8
+	SAY @22
+	IF ~~ THEN DO ~SetGlobal("FrennedanSordrelTalk","GLOBAL",1) CreateVisualEffectObject("SPFLESHS",Myself) ChangeAnimation("FRDROW08")~ EXIT
+END
+
+
+IF ~Global("FrennedanSordrelTalk","GLOBAL",2)~ THEN BEGIN 9
+	SAY @23 
+	IF ~~ THEN REPLY @24 GOTO 10
+	IF ~~ THEN REPLY @25 GOTO 11
+	IF ~~ THEN REPLY @26 GOTO 12
+END
+
+
+IF ~~ THEN BEGIN 10
+	SAY @27
+	IF ~~ THEN REPLY @28 GOTO 11
+	IF ~~ THEN REPLY @29 GOTO 12
+END
+
+
+IF ~~ THEN BEGIN 11
+	SAY @30
+	IF ~~ THEN REPLY @31 GOTO 12
+	IF ~~ THEN REPLY @32 GOTO 12
+END
+
+
+IF ~~ THEN BEGIN 12
+	SAY @33
+	IF ~~ THEN DO ~SetGlobal("FrennedanSordrelTalk","GLOBAL",3) ChangeAIScript("MAGE16C",DEFAULT) Enemy()~ EXIT
+END

@@ -1,0 +1,247 @@
+BACKUP ~frenmod/fren-backup~
+AUTHOR ~jastey@web.de~ //Nicolas Peters - darthsabe@web.de~
+
+VERSION ~1.03~
+
+AUTO_TRA ~frenmod\%s~
+
+README ~frenmod\Liesmich.txt~
+
+LANGUAGE ~Deutsch~
+         ~German~
+         ~frenmod\German\Setup.tra~
+
+BEGIN @1
+
+// adding all ToB actions to action.ids unless already present
+APPEND ~ACTION.IDS~ ~31 SpellRES(S:RES*,O:Target*)~
+             UNLESS ~31 SpellRES(S:RES\*,O:Target\*)~
+APPEND ~ACTION.IDS~ ~95 SpellPointRES(S:RES*,P:Target*)~
+             UNLESS ~95 SpellPointRES(S:RES\*,P:Target\*)~
+APPEND ~ACTION.IDS~ ~113 ForceSpellRES(S:RES*,O:Target)~
+             UNLESS ~113 ForceSpellRES(S:RES\*,O:Target)~
+APPEND ~ACTION.IDS~ ~114 ForceSpellPointRES(S:RES*,P:Target)~
+             UNLESS ~114 ForceSpellPointRES(S:RES\*,P:Target)~
+APPEND ~ACTION.IDS~ ~147 RemoveSpellRES(S:Spell*)~
+             UNLESS ~147 RemoveSpellRES(S:Spell\*)~
+APPEND ~ACTION.IDS~ ~160 ApplySpellRES(S:RES*,O:Target)~
+             UNLESS ~160 ApplySpellRES(S:RES\*,O:Target)~
+APPEND ~ACTION.IDS~ ~181 ReallyForceSpellRES(S:RES*,O:Target)~
+             UNLESS ~181 ReallyForceSpellRES(S:RES\*,O:Target)~
+APPEND ~ACTION.IDS~ ~191 SpellNoDecRES(S:RES*,O:Target*)~
+             UNLESS ~191 SpellNoDecRES(S:RES\*,O:Target\*)~
+APPEND ~ACTION.IDS~ ~192 SpellPointNoDecRES(S:RES*,P:Target*)~
+             UNLESS ~192 SpellPointNoDecRES(S:RES\*,P:Target\*)~
+APPEND ~ACTION.IDS~ ~240 ReallyForceSpellDeadRES(S:RES*,O:Target)~
+             UNLESS ~240 ReallyForceSpellDeadRES(S:RES\*,O:Target)~
+APPEND ~ACTION.IDS~ ~318 ForceSpellRangeRES(S:RES*,O:Target)~
+             UNLESS ~318 ForceSpellRangeRES(S:RES\*,O:Target)~
+APPEND ~ACTION.IDS~ ~319 ForceSpellPointRangeRES(S:RES*,P:Target)~
+             UNLESS ~319 ForceSpellPointRangeRES(S:RES\*,P:Target)~
+APPEND ~ACTION.IDS~ ~337 ReallyForceSpellPointRES(S:RES*,P:Target*)~
+             UNLESS ~337 ReallyForceSpellPointRES(S:RES\*,P:Target\*)~
+COPY_EXISTING ~action.ids~ ~override~
+  REPLACE_TEXTUALLY ~^106 Shout(.*$~ ~106 Shout(I:ID*SHOUTIDS)~
+  BUT_ONLY_IF_IT_CHANGES
+  
+// additional ToB triggers for SoA
+APPEND ~TRIGGER.IDS~ ~0x00A1 SpellCastOnMeRES(S:Spell*,O:Caster*)~
+              UNLESS ~0x00A1 SpellCastOnMeRES(S:Spell\*,O:Caster\*)~
+APPEND ~TRIGGER.IDS~ ~0x0091 SpellCastRES(S:Spell*,O:Object*)~
+              UNLESS ~0x0091 SpellCastRES(S:Spell\*,O:Object\*)~
+APPEND ~TRIGGER.IDS~ ~0x00A6 SpellCastPriestRES(S:Spell*,O:Object*)~
+              UNLESS ~0x00A6 SpellCastPriestRES(S:Spell\*,O:Object\*)~
+APPEND ~TRIGGER.IDS~ ~0x00A7 SpellCastInnateRES(S:Spell*,O:Object*)~
+              UNLESS ~0x00A7 SpellCastInnateRES(S:Spell\*,O:Object\*)~
+APPEND ~TRIGGER.IDS~ ~0x4031 HaveSpellRES(S:Spell*)~
+              UNLESS ~0x4031 HaveSpellRES(S:Spell\*)~
+APPEND ~TRIGGER.IDS~ ~0x40D5 ActuallyInCombat()~
+              UNLESS ~0x40D5 ActuallyInCombat()~
+COPY_EXISTING ~trigger.ids~ ~override~
+  REPLACE_TEXTUALLY ~\bHeard(O:Object\*,I:ID\*)~
+                    ~Heard(O:Object*,I:ID*SHOUTIDS)~
+  BUT_ONLY_IF_IT_CHANGES
+
+// copy portraits
+COPY ~frenmod/Portraits/fren00L.bmp~ ~override/fren00L.bmp~
+COPY ~frenmod/Portraits/fren00S.bmp~ ~override/fren00S.bmp~
+COPY ~frenmod/Portraits/fren01L.bmp~ ~override/fren01L.bmp~
+COPY ~frenmod/Portraits/fren01S.bmp~ ~override/fren01S.bmp~
+COPY ~frenmod/Portraits/fren02L.bmp~ ~override/fren02L.bmp~
+COPY ~frenmod/Portraits/fren02S.bmp~ ~override/fren02S.bmp~
+COPY ~frenmod/Portraits/fren03L.bmp~ ~override/fren03L.bmp~
+COPY ~frenmod/Portraits/fren03S.bmp~ ~override/fren03S.bmp~
+COPY ~frenmod/Portraits/fren04L.bmp~ ~override/fren04L.bmp~
+COPY ~frenmod/Portraits/fren04S.bmp~ ~override/fren04S.bmp~
+COPY ~frenmod/Portraits/fren05L.bmp~ ~override/fren05L.bmp~
+COPY ~frenmod/Portraits/fren05S.bmp~ ~override/fren05S.bmp~
+COPY ~frenmod/Portraits/fren06L.bmp~ ~override/fren06L.bmp~
+COPY ~frenmod/Portraits/fren06S.bmp~ ~override/fren06S.bmp~
+COPY ~frenmod/Portraits/fren07L.bmp~ ~override/fren07L.bmp~
+COPY ~frenmod/Portraits/fren07S.bmp~ ~override/fren07S.bmp~
+COPY ~frenmod/Portraits/fren08L.bmp~ ~override/fren08L.bmp~
+COPY ~frenmod/Portraits/fren08S.bmp~ ~override/fren08S.bmp~
+COPY ~frenmod/Portraits/fren09L.bmp~ ~override/fren09L.bmp~
+COPY ~frenmod/Portraits/fren09S.bmp~ ~override/fren09S.bmp~
+
+// copy charakter-script and creature-file
+COMPILE ~frenmod/fren.baf~
+	USING ~~
+COPY ~frenmod/SHAPE.cre~ ~override/SHAPE.cre~
+SAY NAME1 @2
+SAY NAME2 @2
+SAY BIO @3
+
+// extend scripts
+EXTEND_BOTTOM ~VICONIA.bcs~ ~frenmod/vicon.bcs~
+EXTEND_BOTTOM ~UDDOOR2.bcs~ ~frenmod/UDDOOR2.bcs~
+EXTEND_BOTTOM ~UDDOOR3.bcs~ ~frenmod/UDDOOR3.bcs~
+
+
+// copy spells and items
+COPY ~frenmod/Spells/frenm.spl~ ~override/frenm.spl~
+	SAY NAME1 @4
+	SAY NAME2 @4
+COPY ~frenmod/Spells/frenm2.spl~ ~override/frenm2.spl~
+	SAY NAME1 @5
+	SAY NAME2 @5
+COPY ~frenmod/Spells/frenm3.spl~ ~override/frenm3.spl~
+	SAY NAME1 @6
+	SAY NAME2 @6
+COPY ~frenmod/Spells/fren00.spl~ ~override/fren00.spl~
+	SAY NAME1 @4
+	SAY NAME2 @4
+COPY ~frenmod/Spells/fren01.spl~ ~override/fren01.spl~
+	SAY NAME1 @4
+	SAY NAME2 @4
+COPY ~frenmod/Spells/fren02.spl~ ~override/fren02.spl~
+	SAY NAME1 @4
+	SAY NAME2 @4
+COPY ~frenmod/Spells/fren03.spl~ ~override/fren03.spl~
+	SAY NAME1 @4
+	SAY NAME2 @4
+COPY ~frenmod/Spells/fren04.spl~ ~override/fren04.spl~
+	SAY NAME1 @4
+	SAY NAME2 @4
+COPY ~frenmod/Spells/fren05.spl~ ~override/fren05.spl~
+	SAY NAME1 @4
+	SAY NAME2 @4
+COPY ~frenmod/Spells/fren06.spl~ ~override/fren06.spl~
+	SAY NAME1 @4
+	SAY NAME2 @4
+COPY ~frenmod/Spells/fren07.spl~ ~override/fren07.spl~
+	SAY NAME1 @4
+	SAY NAME2 @4
+COPY ~frenmod/Spells/fren08.spl~ ~override/fren08.spl~
+COPY ~frenmod/Spells/fren09.spl~ ~override/fren09.spl~
+COPY ~frenmod/Spells/fren10.spl~ ~override/fren10.spl~
+COPY ~frenmod/Spells/fraufw02.spl~ ~override/fraufw02.spl~
+COPY ~frenmod/Spells/fraufw03.spl~ ~override/fraufw03.spl~
+COPY ~frenmod/Spells/fraufw04.spl~ ~override/fraufw04.spl~
+COPY ~frenmod/Spells/frmind.spl~ ~override/frmind.spl~
+
+COPY ~frenmod/Items/fren01.itm~ ~override/fren01.itm~
+SAY NAME1 @7
+SAY NAME2 @7
+SAY DESC @8
+
+COPY ~frenmod/Items/fren02.itm~ ~override/fren02.itm~
+SAY NAME1 @9
+SAY NAME2 @9
+SAY DESC @10
+
+COPY ~frenmod/Items/fren03.itm~ ~override/fren03.itm~
+SAY NAME1 @11
+SAY NAME2 @9
+SAY DESC @12
+
+COPY ~frenmod/Items/fren04.itm~ ~override/fren04.itm~
+SAY NAME1 @9
+SAY NAME2 @9
+SAY DESC @13
+
+COPY ~frenmod/Items/frenm.itm~ ~override/frenm.itm~
+
+COPY ~frenmod/Items/fren05.itm~ ~override/fren05.itm~
+SAY NAME1 @14
+SAY NAME2 @14
+SAY DESC @15
+
+COPY ~frenmod/Items/fren06.itm~ ~override/fren06.itm~
+SAY NAME1 @16
+SAY NAME2 @16
+SAY DESC @17
+
+
+// compile dialogues
+COMPILE ~frenmod/frenJ.d~
+USING ~~
+COMPILE ~frenmod/frenP.d~
+USING ~~
+
+// append 2da entries
+APPEND ~pdialog.2da~
+	~frendan frenP frenJ frenD~
+UNLESS ~frendan~
+UNLESS ~25POST~
+
+APPEND ~pdialog.2da~
+	~frendan frenP frenJ frenD fren25P fren25J fren25D fren~
+UNLESS ~frendan~
+IF ~25POST~
+
+
+// Frennedan's side quest in the Underdark
+EXTEND_BOTTOM ~AR2200.bcs~ ~frenmod/Unterreich/AR2200.bcs~
+EXTEND_BOTTOM ~AR2100.bcs~ ~frenmod/Unterreich/AR2100.bcs~
+EXTEND_BOTTOM ~DWCITY.bcs~ ~frenmod/Unterreich/dwcity.bcs~
+
+COMPILE ~frenmod/Unterreich/frdrow01.baf~
+	USING ~~
+COMPILE ~frenmod/Unterreich/frdrow02.baf~
+	USING ~~
+COMPILE ~frenmod/Unterreich/frdrow03.baf~
+	USING ~~
+COMPILE ~frenmod/Unterreich/frdrow08.baf~
+	USING ~~
+COMPILE ~frenmod/Unterreich/frcut01.baf~
+	USING ~~
+COMPILE ~frenmod/Unterreich/frdrow01.d~
+	USING ~~
+COMPILE ~frenmod/Unterreich/frdrow02.d~
+	USING ~~
+COMPILE ~frenmod/Unterreich/frdrow03.d~
+	USING ~~
+COMPILE ~frenmod/Unterreich/frdrow04.d~
+	USING ~~
+COMPILE ~frenmod/Unterreich/frdrow05.d~
+	USING ~~
+COMPILE ~frenmod/Unterreich/frdrow06.d~
+	USING ~~
+COMPILE ~frenmod/Unterreich/frdrow07.d~
+	USING ~~
+
+COPY ~frenmod/Unterreich/frdrow01.cre~ ~override/frdrow01.cre~
+	SAY NAME1 @18
+	SAY NAME2 @18
+COPY ~frenmod/Unterreich/frdrow02.cre~ ~override/frdrow02.cre~
+	SAY NAME1 @19
+	SAY NAME2 @19
+COPY ~frenmod/Unterreich/frdrow03.cre~ ~override/frdrow03.cre~
+	SAY NAME1 @20
+	SAY NAME2 @20
+COPY ~frenmod/Unterreich/frdrow04.cre~ ~override/frdrow04.cre~
+	SAY NAME1 @21
+	SAY NAME2 @21
+COPY ~frenmod/Unterreich/frdrow05.cre~ ~override/frdrow05.cre~
+	SAY NAME1 @22
+	SAY NAME2 @22
+COPY ~frenmod/Unterreich/frdrow06.cre~ ~override/frdrow06.cre~
+	SAY NAME1 @23
+	SAY NAME2 @23
+COPY ~frenmod/Unterreich/frdrow07.cre~ ~override/frdrow07.cre~
+	SAY NAME1 @24
+	SAY NAME2 @24
+COPY ~frenmod/Unterreich/frdrow08.cre~ ~override/frdrow08.cre~
+	SAY NAME1 @25
+	SAY NAME2 @25

@@ -1,0 +1,184 @@
+				BG II - NSC-Modifikation: Frennedan
+
+			Hergestellt von Nicolas Peters (darthsabe@web.de)
+
+			Besonderer Dank geht an dieser Stelle an die erstklassigen Tutorials
+
+			von Maus und Octavian!
+
+
+
+
+				Version: 1.03
+
+
+				
+				: Bisher nur deutschsprachig!
+
+				: Thron des Bhaal fähig (jedoch noch keine direkte Untersützung)
+
+
+
+Inhaltsverzeichnis:
+
+1.  Einführung
+2.  Installationsanweisung (bitte lesen!)
+3.  Kompatibilität
+4.  Dank
+5.  Rechtliche Hinweise
+6.  geplante Updates
+7.  History
+8.  Hilfreiche Links
+
+
+
+1. Einführung
+
+Mit dieser Modifikaktion kann man einen zusätzlichen Nichtspielercharakter namens Frennedan in seine Gruppe aufnehmen.
+Frennedan ist ein Doppelgänger und ein Gefangener in Irenicus Kerker zu Beginn von Schatten von Amn. Wenn sich der
+Spieler entscheidet, den Doppelgänger aus seinem Gefängnis zu helfen, dann wird er ihn bis zur Oberfläche begleiten und
+ihn dann erneut ansprechen. Von hier an besteht die Möglichkeit, den Doppelgänger fest in seine Gruppe aufzunehmen,
+mit ihm gemeinsam Irenicus aufzuspüren und Rache zu nehmen.
+
+Für weitere Informationen schaut in die "BIOGRAPHIE Frennedan.doc", die dem Mod beiliegen sollte. Die Informationen in
+dem Dokument geben Aufschlüsse auf die Vergangenheit des Doppelgängers. Lest es, wenn es Euch interessiert ;-).
+
+
+
+2. Installationsanweisung
+
+Die *.zip Datei in das BG2-Hauptverzeichnis(!) entpacken und dann die Setup-frennedan.exe starten.
+
+
+
+3. Kompatiblilität
+
+Die Frennedan-Modifaktion sollte eigentlich mit allen anderen Mods kompatibel sein.
+
+
+
+4. Dank
+
+Mein Dank geht an die vielen hilfreichen Member des Rosenranken Forums, insbesondere Octavian, für die Unterstützung und
+das Tutorial. Mein Dank geht weiterhin an den Beta-Tester Sascha Ahrens und an die wunderbaren Tools von TeamBG
+und WeiDU. 
+
+
+
+5. Rechtliche Hinweise
+
+Dieser Mod ist nicht kommerziell, sondern ausschließlich für den privaten Gebrauch gedacht. Shar-Teel ist eine
+Erfindung von den Machern von Baldur's Gate. Der Begriff "Forgotten Realms" ist eine urheberrechtlich geschützte
+Bezeichnung der Wizard of the Coast INC ©.
+
+Beim Testen dieser Erweiterung konnte ich keine Fehler feststellen, die sich negativ auf die Computersysteme auswirken
+könnten. Dennoch bitte ich um Verständnis, dass ich keine Verantwortung für etwaige Schäden, die durch Installation dieses
+Mods auftreten könnten,übernehmen kann. Jede Installation läuft auf eigener Gefahr. Um den Zustand vor der Installation
+erreichen zu können, rate ich, ein oder zwei Speicherstände vor ebendieser zu sichern.
+
+
+
+6. geplante Updates
+
+Weitere Updates sind definitiv in Planung. Insbesondere möchte ich weitere Dialoge, auch zwischen den Charakteren und eine
+Integration in Thron des Bhaal einführen.
+
+in der nächsten Version v1.02: (bisher in Planung - aktuelle Liste auf www.baldursgate-refugium.de.vu)
+
+- 3-4 weitere Dialoge mit dem Hauptcharakter
+- Integration in Thron des Bhaal
+- Aran Linvail im Gebäude der Schattendiebe
+- weitere Dialog/e mit Edwin
+- Dialog mit Viconia (Bugfixing)
+- Einmischdialog bei Tolgerias (Verhüllter Magier)
+- Einmischdialog bei Magier in den Umar Hügeln
+- Einmischdialog bei Valygar in den Umar Hügeln
+- Einmischdialog bei Rejiek dem Häuter
+- Einmischdialog bei Elhan, Elfengeneral
+- Einmischdialog bei Tazok
+- Einmischdialog bei Firkraag
+- Einmischdialog bei Garren Windspeer
+- Einmischdialog bei illusionären Ogern (Windspeer-Hügel)
+- Einmischdialog bei Schattendrache (Ruine des Amauntor-Tempels)
+- Einmischdialog bei Schattenfürst (Ruine des Amauntor-Tempels)
+- Einmischdialog bei Mazzy Fentan (Ruine des Amauntor-Tempels)
+- Dialog mit Korgan
+
+
+
+7. History
+
+abgeschlossene Arbeiten:
+
+v1.00
+- Startdialog, in Irenicus Kerker
+- Dialog mit Hauptcharakter bei gelungener Flucht, in Waukeens Promenade
+- Einmischdialog bei Edwin, Auftragsvergabe (Mae-Var Quest)
+- Einmischdialog bei Ribald Tauschmann, in Waukeens Promenade
+- Einmischdialog bei Bodhi, erstes Treffen auf dem Friedhof
+- Einmischdialog bei Leutnant Aegisfeld, im Brückenviertel (Häuter vom Brückenviertel Quest)
+- Dialog mit Edwin
+- Einmischdialog bei Bodhi, kurz vor dem Aufbruch nach Brynnlaw
+- Einmischdialog bei Dili, in der Zauberfeste
+- Dialog mit Hauptcharakter nach dem Erreichen der Pirateninsel Brynnlaw
+- Einmischdialog bei dem Koordinator der Zauberfeste (Irenicus)
+- Einmischdialog bei Bodhi, kurz vor dem Spießrutenlauf
+- Einmischdialog beim Stadttor von Ust Natha (Unterreich)
+- Dialog mit dem Hauptcharakter nach dem Betreten des Unterreiches
+- Dialog mit Viconia
+- Ergänzung eines Dialoges zwischen Solaufein und Zofe Imrae, wenn Frennedan in der Gruppe
+- alternativer Lösungsweg für Gedankenschinder-Stadt (Unterreich)
+- Tagebucheinträge und Erfahrungspunkte Verteilung
+- Append-Dialog/Einmischdialog beim Baum des Lebens
+- Einmischdialog bei Rakshasa-Gruppe
+- Sounds für Frennedan
+- PSI-Schlag nach dem Unterreich entfernt
+
+v1.01
+- Einmischdialog bei Irenicus, kurz vor dem Kampf in der Zauberfeste
+- Einmischdialog bei Bodhi, Vernichtung von Bodhis Gilde (vor dem Aufbruch nach Brynnlaw, Pirateninsel)
+- Einmischdialog bei Aran Linvail, erstes Treffen (Anschluss Schattendiebe)
+- Einmischdialog bei Aran Linvail, kurz vor dem Antritt zur Schifffahrt nach Brynnlaw, Pirateninsel
+- Einmischdialog bei Saemon Havarian, nach dem Erreichen von Brynnlaw
+- Einmischdialog bei Irenicus, Baum des Lebens (Vor-Endkampf)
+- Einmischdialog bei Irenicus, Hölle (Endkampf)
+- Einmischdialog beim Ablussgespräch mit Ellesime (Ende Schatten von Amn)
+- Fähigkeit "Gedanken wahrnehmen" hinzugefügt (Gesinnung erkennen)
+- Immunitäten gegen Beeinflussungszauber (Gedankenschild) und Schlaf hinzugefügt
+- 2 weitere Dialoge mit dem Hauptcharakter
+
+v1.02 (20 June 2009)
+- Traified the mod
+- English comments in the setup-frennedan.tp2
+- Patching of action.ids and trigger.ids
+- Miloch's fixed shape.cre
+  http://www.shsforums.net/index.php?s=&showtopic=33998&view=findpost&p=400984
+- Zeroed effects offset in [frenmod\Unterreich\FRDROW03.CRE]
+- Zeroed effects offset in [frenmod\Unterreich\FRDROW07.CRE]
+- Zeroed effects offset in [frenmod\Unterreich\FRDROW08.CRE]
+- Readme call at the beginning of installation process
+- Added VERSION-flag
+- Updated to WeiDU v210
+
+v1.03 (24 June 2009)
+- Replaced the REPLACE commands with ALTER_TRANS, EXPANDED_TOP, etc. for better compatibility
+
+
+
+7. Hilfreiche Links (teilweise veraltet)
+
+www.baldursgate-refugium.de.vu
+Meine Homepage, wo unter anderem immer die neueste Version Frennedan Mods zu finden sein sollte.
+
+
+www.rosenranken.org
+Das Rosenranken Forum, das beste deutschesprachige Forum der Baldur's Gate Community
+
+
+www.cs.berkeley.edu/%7Eweimer/bgate/
+Weimer; die Seite, wo man sich immer die aktuelle Version von Weidu runterladen kann. Außerdem gibt es dort das
+Ascension-Mod, das Solaufein-Mod, Valen-Mod etc.
+
+
+www.bgforum.whcity.de/showthread.php?s=&threadid=14855
+Eine riesige geniale Linkliste zu engl. und dt. Mods, Patches, Tutorials etc. ...
