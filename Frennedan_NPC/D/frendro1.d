@@ -1,4 +1,4 @@
-BEGIN frdrow01
+BEGIN frendro1
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
 	SAY @0 
@@ -35,7 +35,7 @@ END
 
 IF ~~ THEN BEGIN 4
 	SAY @15 = @16
-	IF ~~ THEN DO ~EscapeArea() CreateCreature("FRDROW02",[1391.1452],3)~ JOURNAL @17 EXIT
+	IF ~~ THEN DO ~EscapeArea() CreateCreature("frendro2",[1391.1452],3)~ JOURNAL @17 EXIT
 END
 
 

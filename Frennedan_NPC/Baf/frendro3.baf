@@ -1,6 +1,6 @@
 IF
 	Global("FrennedanOberinFirstTalk01","GLOBAL",0)
-	Dead("frdrow06")
+	Dead("frendro6")
 	GlobalLT("FrennedanSordrel","GLOBAL",3)
 THEN
 	RESPONSE #100

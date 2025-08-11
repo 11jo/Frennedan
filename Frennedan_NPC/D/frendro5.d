@@ -1,7 +1,7 @@
 // G'esstre, erste Tochter
-BEGIN frdrow05
+BEGIN frendro5
 
 IF ~~ THEN BEGIN 0
 	SAY @0
-	IF ~~ THEN EXTERN ~frdrow03~ 6
+	IF ~~ THEN EXTERN ~frendro3~ 6
 END

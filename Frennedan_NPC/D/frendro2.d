@@ -1,5 +1,5 @@
 // Nabeyue, zweite Tochter
-BEGIN FRDROW02
+BEGIN frendro2
 
 IF ~NumTimesTalkedTo(0) Global("FrennedanNabeyue","GLOBAL",0)~ THEN BEGIN 0
 	SAY @0 
@@ -78,32 +78,32 @@ END
 
 IF ~Global("FrennedanNabeyue","GLOBAL",4)~ THEN BEGIN 14
 	SAY @26
-	IF ~~ THEN DO ~SetGlobal("FrennedanNabeyue","GLOBAL",5)~ EXTERN ~frdrow03~ 0
+	IF ~~ THEN DO ~SetGlobal("FrennedanNabeyue","GLOBAL",5)~ EXTERN ~frendro3~ 0
 END
 
 
 IF ~~ THEN BEGIN 15
 	SAY @27 
-	IF ~~ THEN EXTERN ~frdrow03~ 1
+	IF ~~ THEN EXTERN ~frendro3~ 1
 END
 
 
 IF ~~ THEN BEGIN 16
 	SAY @28
-	IF ~~ THEN EXTERN ~frdrow03~ 2
+	IF ~~ THEN EXTERN ~frendro3~ 2
 END
 
 
 IF ~~ THEN BEGIN 17
 	SAY @29
-	IF ~Gender(Player1,FEMALE)~ THEN EXTERN ~frdrow04~ 0
-	IF ~!Gender(Player1,FEMALE)~THEN EXTERN ~frdrow04~ 1
+	IF ~Gender(Player1,FEMALE)~ THEN EXTERN ~frendro4~ 0
+	IF ~!Gender(Player1,FEMALE)~THEN EXTERN ~frendro4~ 1
 END
 
 
 IF ~~ THEN BEGIN 18
 	SAY @30 
-	IF ~~ THEN EXTERN ~frdrow03~ 22
+	IF ~~ THEN EXTERN ~frendro3~ 22
 END
 
 
@@ -267,7 +267,7 @@ IF ~~ THEN BEGIN 43
 END
 
 
-IF ~Dead("frdrow08") PartyHasItem("fren06") Global("FrennedanSchwarzesBuch","LOCALS",0)~ THEN BEGIN 44
+IF ~Dead("frendro8") PartyHasItem("fren06") Global("FrennedanSchwarzesBuch","LOCALS",0)~ THEN BEGIN 44
 	SAY @72 
 	IF ~~ THEN DO ~TakePartyItem("FREN06")~ GOTO 45
 END

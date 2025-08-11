@@ -1,5 +1,5 @@
 // Lerdros, der Snirfneblie / Sordrel, der Zauberer
-BEGIN frdrow07
+BEGIN frendro7
 
 IF ~Global("FrennedanSordrelTalk","GLOBAL",0)~ THEN BEGIN 0
 	SAY @0
@@ -36,7 +36,7 @@ END
 
 IF ~~ THEN BEGIN 4
 	SAY @14
-	IF ~~ THEN DO ~SetGlobal("FrennedanSordrelTalk","GLOBAL",1) CreateVisualEffectObject("SPFLESHS",Myself) ChangeAnimation("FRDROW08") Wait(1) StartDialogueNoSet(Player1)~ EXIT
+	IF ~~ THEN DO ~SetGlobal("FrennedanSordrelTalk","GLOBAL",1) CreateVisualEffectObject("SPFLESHS",Myself) ChangeAnimation("frendro8") Wait(1) StartDialogueNoSet(Player1)~ EXIT
 END
 
 
@@ -64,7 +64,7 @@ END
 
 IF ~~ THEN BEGIN 8
 	SAY @22
-	IF ~~ THEN DO ~SetGlobal("FrennedanSordrelTalk","GLOBAL",1) CreateVisualEffectObject("SPFLESHS",Myself) ChangeAnimation("FRDROW08")~ EXIT
+	IF ~~ THEN DO ~SetGlobal("FrennedanSordrelTalk","GLOBAL",1) CreateVisualEffectObject("SPFLESHS",Myself) ChangeAnimation("frendro8")~ EXIT
 END
 
 

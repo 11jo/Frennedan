@@ -324,13 +324,13 @@ END
 
 IF ~~ THEN BEGIN frenn26
 	SAY @68
-	IF ~~ THEN EXTERN ~frdrow06~ 5
+	IF ~~ THEN EXTERN ~frendro6~ 5
 END
 
 
 IF ~~ THEN BEGIN frenn27
 	SAY @69
-	IF ~~ THEN EXTERN ~frdrow06~ 5
+	IF ~~ THEN EXTERN ~frendro6~ 5
 END
 
 
@@ -343,7 +343,7 @@ END
 
 IF ~~ THEN BEGIN 60
 	SAY @73
-	IF ~~ THEN EXTERN ~frdrow03~ 15
+	IF ~~ THEN EXTERN ~frendro3~ 15
 END
 
 

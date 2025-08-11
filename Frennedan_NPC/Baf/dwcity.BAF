@@ -1,0 +1,14 @@
+IF
+	Global("DrowCityHostile","GLOBAL",1)
+	Global("FrennedanDrows","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanDrows","GLOBAL",1)
+		ChangeEnemyAlly("frendro1",ENEMY)
+		ChangeEnemyAlly("frendro2",ENEMY) // Nabeyue
+		ChangeEnemyAlly("frendro3",ENEMY) // Lilfaeri
+		ChangeEnemyAlly("frendro4",ENEMY)
+		ChangeEnemyAlly("frendro5",ENEMY) // Gesstr
+		ChangeEnemyAlly("frendro6",ENEMY)
+END
+

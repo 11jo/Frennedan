@@ -1,15 +1,15 @@
 // Mutter Oberin Lilfaeriza
-BEGIN frdrow03
+BEGIN frendro3
 
 IF ~~ THEN BEGIN 0
 	SAY @0
-	IF ~~ THEN EXTERN ~frdrow02~ 15
+	IF ~~ THEN EXTERN ~frendro2~ 15
 END
 
 
 IF ~~ THEN BEGIN 1
 	SAY @1
-	IF ~~ THEN EXTERN ~frdrow02~ 16
+	IF ~~ THEN EXTERN ~frendro2~ 16
 END
 
 
@@ -17,31 +17,31 @@ IF ~~ THEN BEGIN 2
 	SAY @2
 	=
 	@3
-	IF ~~ THEN EXTERN ~frdrow06~ 0
+	IF ~~ THEN EXTERN ~frendro6~ 0
 END
 
 
 IF ~~ THEN BEGIN 4
 	SAY @4
-	IF ~~ THEN EXTERN ~frdrow06~ 1
+	IF ~~ THEN EXTERN ~frendro6~ 1
 END
 
 
 IF ~~ THEN BEGIN 5
 	SAY @5
-	IF ~~ THEN EXTERN ~frdrow06~ 2
+	IF ~~ THEN EXTERN ~frendro6~ 2
 END
 
 
 IF ~~ THEN BEGIN 6
 	SAY @6
-	IF ~~ THEN EXTERN ~frdrow06~ 6
+	IF ~~ THEN EXTERN ~frendro6~ 6
 END
 
 
 IF ~~ THEN BEGIN 7
 	SAY @7
-	IF ~~ THEN EXTERN ~frdrow05~ 0
+	IF ~~ THEN EXTERN ~frendro5~ 0
 END
 
 
@@ -57,31 +57,31 @@ END
 
 IF ~~ THEN BEGIN 10
 	SAY @13
-	IF ~~ THEN EXTERN ~frdrow06~ 7
+	IF ~~ THEN EXTERN ~frendro6~ 7
 END
 
 
 IF ~~ THEN BEGIN 11
 	SAY @14
-	IF ~~ THEN EXTERN ~frdrow06~ 10
+	IF ~~ THEN EXTERN ~frendro6~ 10
 END
 
 
 IF ~~ THEN BEGIN 12
 	SAY @15
-	IF ~~ THEN EXTERN ~frdrow06~ 11
+	IF ~~ THEN EXTERN ~frendro6~ 11
 END
 
 
 IF ~~ THEN BEGIN 13
 	SAY @16
-	IF ~~ THEN EXTERN ~frdrow06~ 12
+	IF ~~ THEN EXTERN ~frendro6~ 12
 END
 
 
 IF ~~ THEN BEGIN 14
 	SAY @17
-	IF ~~ THEN EXTERN ~frdrow04~ 2
+	IF ~~ THEN EXTERN ~frendro4~ 2
 END
 
 
@@ -107,13 +107,13 @@ END
 
 IF ~~ THEN BEGIN 18
 	SAY @23
-	IF ~~ THEN EXTERN ~frdrow06~ 13
+	IF ~~ THEN EXTERN ~frendro6~ 13
 END
 
 
 IF ~~ THEN BEGIN 19
 	SAY @24
-	IF ~~ THEN DO ~ActionOverride("frdrow06",EscapeArea()) SetGlobal("FrennedanSordrel","GLOBAL",3)~ EXIT
+	IF ~~ THEN DO ~ActionOverride("frendro6",EscapeArea()) SetGlobal("FrennedanSordrel","GLOBAL",3)~ EXIT
 END
 
 
@@ -125,7 +125,7 @@ END
 
 IF ~~ THEN BEGIN 21
 	SAY @26
-	IF ~~ THEN EXTERN ~frdrow02~ 18
+	IF ~~ THEN EXTERN ~frendro2~ 18
 END
 
 
@@ -137,7 +137,7 @@ END
 
 IF ~~ THEN BEGIN 23
 	SAY @28
-	IF ~~ THEN EXTERN ~frdrow02~ 19
+	IF ~~ THEN EXTERN ~frendro2~ 19
 END
 
 

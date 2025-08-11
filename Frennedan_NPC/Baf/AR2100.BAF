@@ -1,0 +1,9 @@
+IF
+	Global("FrennedanSordrelCreateLerdros","GLOBAL",0)
+	Global("FrennedanAuftrag","GLOBAL",4)
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanSordrelCreateLerdros","GLOBAL",1)
+		CreateCreature("FRENDRO7",[1347.842],E)
+END
+

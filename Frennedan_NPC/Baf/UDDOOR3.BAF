@@ -1,0 +1,13 @@
+IF
+	Global("thrallDoorOpen2","AR2400",0)  // Mind Flayers in Underdark
+	IsOverMe([0.0.DOPPLEGANGER])
+	Global("FrennedanSpeicher","GLOBAL",4)
+	GlobalGT("udMind","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("thrallDoorOpen2","AR2400",1)  // Mind Flayers in Underdark
+		Unlock("Door22")
+		OpenDoor("Door22")
+		EraseJournalEntry(10837)  // Aux mains des flagelleurs mentaux ! Une étrange porte m'empêche de progresser dans la cité des illithids. En dehors des flagelleurs mentaux, je suspecte que seul un grand pouvoir pourrait forcer cette porte.
+END
+

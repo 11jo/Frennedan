@@ -1,0 +1,22 @@
+IF
+	Global("FrennedanInteractViconia","GLOBAL",0)
+	InParty(Myself)
+	InParty("frendan")
+	AreaCheck("AR2100")  // Underdark
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanInteractViconia","GLOBAL",1)
+		SetGlobalTimer("ViconiaIntFrennedan","GLOBAL",ONE_DAY)
+END
+
+IF
+	Global("FrennedanInteractViconia","GLOBAL",1)
+	InParty(Myself)
+	IfValidForPartyDialog("frendan")
+	GlobalTimerExpired("ViconiaIntFrennedan","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("FrennedanInteractViconia","GLOBAL",2)
+		StartDialogueNoSet("frendan")
+END
+
