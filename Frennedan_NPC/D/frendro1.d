@@ -35,7 +35,7 @@ END
 
 IF ~~ THEN BEGIN 4
 	SAY @15 = @16
-	IF ~~ THEN DO ~EscapeArea() CreateCreature("frendro2",[1391.1452],3)~ JOURNAL @17 EXIT
+	IF ~~ THEN DO ~CreateCreature("frendro2",[1391.1452],3) EscapeArea()~ JOURNAL @17 EXIT
 END
 
 

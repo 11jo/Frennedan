@@ -24,7 +24,7 @@ IF ~~ THEN BEGIN 3
 	SAY @6
 	= 
 	@7
-	IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobal("FrennedanFlucht","GLOBAL",2) SetGlobal("FrennedanJoinedParty","GLOBAL",0) SetGlobal("FrennedanKickedOut","GLOBAL",1) SetGlobal("FMorph","GLOBAL",3) SetGlobal("FrennedanSpeicher","GLOBAL",3) CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren01",Myself) Polymorph(FAT_MAN) SetPlayerSound(Myself,-1,MORALE) SetPlayerSound(Myself,-1,HAPPY) SetPlayerSound(Myself,-1,UNHAPPY_BREAKING_POINT) SetPlayerSound(Myself,38847,DAMAGE) SetPlayerSound(Myself,38786,DYING) SetPlayerSound(Myself,38783,SELECT_COMMON1) SetPlayerSound(Myself,38784,SELECT_COMMON2) SetPlayerSound(Myself,38785,SELECT_COMMON3) SetPlayerSound(Myself,38781,SELECT_COMMON4) Wait(1) EscapeAreaMove("AR0800",1784,1493,0) SetInterrupt(TRUE)~ EXIT
+	IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobal("FrennedanFlucht","GLOBAL",2) SetGlobal("FrennedanJoinedParty","GLOBAL",0) SetGlobal("FrennedanKickedOut","GLOBAL",1) SetGlobal("Fren_Polymorph","GLOBAL",3) SetGlobal("FrennedanSpeicher","GLOBAL",3) CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren01",Myself) Polymorph(FAT_MAN) SetPlayerSound(Myself,-1,MORALE) SetPlayerSound(Myself,-1,HAPPY) SetPlayerSound(Myself,-1,UNHAPPY_BREAKING_POINT) SetPlayerSound(Myself,38847,DAMAGE) SetPlayerSound(Myself,38786,DYING) SetPlayerSound(Myself,38783,SELECT_COMMON1) SetPlayerSound(Myself,38784,SELECT_COMMON2) SetPlayerSound(Myself,38785,SELECT_COMMON3) SetPlayerSound(Myself,38781,SELECT_COMMON4) Wait(1) SetInterrupt(TRUE) EscapeAreaMove("AR0800",1784,1493,0)~ EXIT
 END
 
 
@@ -65,7 +65,7 @@ IF ~~ THEN BEGIN frenn03
 		CreateVisualEffectObject("SPFLESHS",Myself)
 		Polymorph(MINDFLAYER)
 		ReallyForceSpellRES("fren09",Myself)
-		ReallyForceSpellRES("frmind",Myself)
+		ReallyForceSpellRES("frenmind",Myself)
 		AddSpecialAbility("SPIN974")
 		SetPlayerSound(Myself,-1,MORALE)
 		SetPlayerSound(Myself,-1,HAPPY)

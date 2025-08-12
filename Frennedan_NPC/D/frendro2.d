@@ -109,7 +109,7 @@ END
 
 IF ~~ THEN BEGIN 19
 	SAY @31
-	IF ~~ THEN DO ~EscapeAreaMove("AR2200",2306,2240,3) SetGlobal("FrennedanAuftrag","GLOBAL",1) SetGlobal("FrennedanOberinFirstTalk03","GLOBAL",1)~ EXIT
+	IF ~~ THEN DO ~SetGlobal("FrennedanAuftrag","GLOBAL",1) SetGlobal("FrennedanOberinFirstTalk03","GLOBAL",1) EscapeAreaMove("AR2200",2306,2240,3)~ EXIT
 END
 
 

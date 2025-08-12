@@ -1,10 +1,12 @@
 IF
 	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
 	Global("FrennedanQuest","GLOBAL",0)
 	Global("FrennedanHandlung","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("FrennedanQuest","GLOBAL",1)
-		CreateCreature("FRENDRO1",[2306.2240],SWW)
+		CreateCreature("FRENDRO1",[2306.2240],1)
 END
 

@@ -93,15 +93,24 @@ SAY NAME2 @2
 SAY BIO @3
 
 // extend scripts
-EXTEND_BOTTOM ~VICONIA.bcs~ ~Frennedan_NPC/Baf/vicon.bcs~
-EXTEND_BOTTOM ~UDDOOR2.bcs~ ~Frennedan_NPC/Baf/UDDOOR2.bcs~
-EXTEND_BOTTOM ~UDDOOR3.bcs~ ~Frennedan_NPC/Baf/UDDOOR3.bcs~
+EXTEND_BOTTOM ~VICONIA.bcs~ ~Frennedan_NPC/Baf/vicon.baf~
+EXTEND_BOTTOM ~UDDOOR2.bcs~ ~Frennedan_NPC/Baf/UDDOOR2.baf~
+EXTEND_BOTTOM ~UDDOOR3.bcs~ ~Frennedan_NPC/Baf/UDDOOR3.baf~
 
 
 // copy spells and items
+OUTER_SPRINT "Fren_Polymorph" "Fren_Polymorph"
 COPY ~Frennedan_NPC/Spells/frenm.spl~ ~override/frenm.spl~
 	SAY NAME1 @4
 	SAY NAME2 @4
+	LPF ALTER_SPELL_EFFECT
+		INT_VAR
+			check_headers = 1			
+			match_opcode = 265
+		STR_VAR
+			resource = EVAL ~%Fren_Polymorph%~
+		END
+
 COPY ~Frennedan_NPC/Spells/frenm2.spl~ ~override/frenm2.spl~
 	SAY NAME1 @5
 	SAY NAME2 @5
@@ -135,10 +144,10 @@ COPY ~Frennedan_NPC/Spells/fren07.spl~ ~override/fren07.spl~
 COPY ~Frennedan_NPC/Spells/fren08.spl~ ~override/fren08.spl~
 COPY ~Frennedan_NPC/Spells/fren09.spl~ ~override/fren09.spl~
 COPY ~Frennedan_NPC/Spells/fren10.spl~ ~override/fren10.spl~
-COPY ~Frennedan_NPC/Spells/fraufw02.spl~ ~override/fraufw02.spl~
-COPY ~Frennedan_NPC/Spells/fraufw03.spl~ ~override/fraufw03.spl~
-COPY ~Frennedan_NPC/Spells/fraufw04.spl~ ~override/fraufw04.spl~
-COPY ~Frennedan_NPC/Spells/frmind.spl~ ~override/frmind.spl~
+COPY ~Frennedan_NPC/Spells/frenw02.spl~ ~override/frenw02.spl~
+COPY ~Frennedan_NPC/Spells/frenw03.spl~ ~override/frenw03.spl~
+COPY ~Frennedan_NPC/Spells/frenw04.spl~ ~override/frenw04.spl~
+COPY ~Frennedan_NPC/Spells/frenmind.spl~ ~override/frenmind.spl~
 
 COPY ~Frennedan_NPC/Items/fren01.itm~ ~override/fren01.itm~
 SAY NAME1 @7
@@ -192,9 +201,9 @@ IF ~25POST~
 
 
 // Frennedan's side quest in the Underdark
-EXTEND_BOTTOM ~AR2200.bcs~ ~Frennedan_NPC/Baf/AR2200.bcs~
-EXTEND_BOTTOM ~AR2100.bcs~ ~Frennedan_NPC/Baf/AR2100.bcs~
-EXTEND_BOTTOM ~DWCITY.bcs~ ~Frennedan_NPC/Baf/dwcity.bcs~
+EXTEND_BOTTOM ~AR2200.bcs~ ~Frennedan_NPC/Baf/AR2200.baf~
+EXTEND_BOTTOM ~AR2100.bcs~ ~Frennedan_NPC/Baf/AR2100.baf~
+EXTEND_BOTTOM ~DWCITY.bcs~ ~Frennedan_NPC/Baf/dwcity.baf~
 
 COMPILE ~Frennedan_NPC/Baf/frendro1.baf~
 	USING ~~

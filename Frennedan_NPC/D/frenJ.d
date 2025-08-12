@@ -42,7 +42,7 @@ END
 
 IF ~~ THEN BEGIN 5
   SAY #12637 /* ~Aaaah! Ihr wollt einem alten, schwachen Mann nicht helfen?~ */
-  IF ~~ THEN DO ~SetGlobal("FrennedanFirstMeet","GLOBAL",2) SetGlobal("FMorph","GLOBAL",1) SetGlobal("FrennedanSpeicher","GLOBAL",2) SmallWait(7) CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren04",Myself) Polymorph(BOY) Wait(1) StartDialogueNoSet(Player1)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("FrennedanFirstMeet","GLOBAL",2) SetGlobal("Fren_Polymorph","GLOBAL",1) SetGlobal("FrennedanSpeicher","GLOBAL",2) SmallWait(7) CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren04",Myself) Polymorph(BOY) Wait(1) StartDialogueNoSet(Player1)~ EXIT
 END
 
 
@@ -84,7 +84,7 @@ END
 
 IF ~~ THEN BEGIN frei2
   SAY #12650 /* ~Nein, nein, bitte! Wollt Ihr nicht mal einem kleinen Jungen helfen? Oooooh...~ */
-  IF ~~ THEN DO ~SetGlobal("FrennedanFirstMeet","GLOBAL",3) ReallyForceSpellRES("fraufw02",Myself)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("FrennedanFirstMeet","GLOBAL",3) ReallyForceSpellRES("frenw02",Myself)~ EXIT
 END
 
 
@@ -97,7 +97,7 @@ END
 
 IF ~~ THEN BEGIN frei4
   SAY #12657 /* ~Danke! Oh, danke vielmals! Bitte beeilt Euch!~ */
-  IF ~~ THEN DO ~SetGlobal("FrennedanFirstMeet","GLOBAL",3) ReallyForceSpellRES("fraufw02",Myself)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("FrennedanFirstMeet","GLOBAL",3) ReallyForceSpellRES("frenw02",Myself)~ EXIT
 END
 
 
@@ -137,7 +137,7 @@ END
 
 IF ~~ THEN BEGIN fren4
 	SAY #12662 /* ~Wie? Unverschämtes Pack!~ */
-	IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobal("frennedanFirstMeet","GLOBAL",5) SetGlobal("FMorph","GLOBAL",1) SetGlobal("FrennedanSpeicher","GLOBAL",1) SmallWait(7) CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren00",Myself) Polymorph(DOPPLEGANGER) Wait(2) ChangeAIScript("WTASIGHT",DEFAULT) Enemy() SetInterrupt(TRUE)~ EXIT
+	IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobal("frennedanFirstMeet","GLOBAL",5) SetGlobal("Fren_Polymorph","GLOBAL",1) SetGlobal("FrennedanSpeicher","GLOBAL",1) SmallWait(7) CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren00",Myself) Polymorph(DOPPLEGANGER) Wait(2) ChangeAIScript("WTASIGHT",DEFAULT) Enemy() SetInterrupt(TRUE)~ EXIT
 END
 
 
@@ -147,14 +147,14 @@ IF ~~ THEN BEGIN fren5
 END
 
 
-IF ~Global("FrennedanFlucht","GLOBAL",1) Global("FMorph","GLOBAL",0)~ THEN BEGIN frenn0a
+IF ~Global("FrennedanFlucht","GLOBAL",1) Global("Fren_Polymorph","GLOBAL",0)~ THEN BEGIN frenn0a
 	SAY @12 
 	IF ~~ THEN REPLY @13 GOTO frenn1
 	IF ~~ THEN REPLY @14 GOTO frenn2
 END
 
 
-IF ~Global("FrennedanFlucht","GLOBAL",1) Global("FMorph","GLOBAL",2)~ THEN BEGIN frenn0b
+IF ~Global("FrennedanFlucht","GLOBAL",1) Global("Fren_Polymorph","GLOBAL",2)~ THEN BEGIN frenn0b
 	SAY @12 
 	IF ~~ THEN REPLY @13 GOTO frenn1
 	IF ~~ THEN REPLY @14 GOTO frenn2
@@ -192,7 +192,7 @@ END
 
 IF ~~ THEN BEGIN frenn5
 	SAY @27
-	IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobal("FMorph","GLOBAL",100) SetGlobal("FrennedanFlucht","GLOBAL",2) LeaveParty() SmallWait(7) CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren00",Myself) Polymorph(DOPPLEGANGER) Wait(1) ChangeAIScript("WTASIGHT",DEFAULT) Enemy() SetInterrupt(TRUE)~ EXIT
+	IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobal("Fren_Polymorph","GLOBAL",100) SetGlobal("FrennedanFlucht","GLOBAL",2) LeaveParty() SmallWait(7) CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren00",Myself) Polymorph(DOPPLEGANGER) Wait(1) ChangeAIScript("WTASIGHT",DEFAULT) Enemy() SetInterrupt(TRUE)~ EXIT
 END
 
 
@@ -207,7 +207,7 @@ END
 
 IF ~~ THEN BEGIN frenn7
 	SAY @35 = @36
-	IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobal("FrennedanFlucht","GLOBAL",2) SetGlobal("FMorph","GLOBAL",3) SetGlobal("FrennedanSpeicher","GLOBAL",3) CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren08",Myself) Polymorph(FIGHTER_MALE_HUMAN) AddSpecialAbility("frenm") AddSpecialAbility("frenm2") AddSpecialAbility("frenm3") SetInterrupt(TRUE)~ EXIT
+	IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobal("FrennedanFlucht","GLOBAL",2) SetGlobal("Fren_Polymorph","GLOBAL",3) SetGlobal("FrennedanSpeicher","GLOBAL",3) CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren08",Myself) Polymorph(FIGHTER_MALE_HUMAN) AddSpecialAbility("frenm") AddSpecialAbility("frenm2") AddSpecialAbility("frenm3") SetInterrupt(TRUE)~ EXIT
 END
 
 
@@ -221,7 +221,7 @@ END
 
 IF ~~ THEN BEGIN frenn9
 	SAY @40
-	IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobal("FrennedanFlucht","GLOBAL",2) SetGlobal("FrennedanJoinedParty","GLOBAL",0) SetGlobal("FrennedanFriedhof","GLOBAL",1) SetGlobal("FMorph","GLOBAL",3) SetGlobal("FrennedanSpeicher","GLOBAL",3) LeaveParty() AddSpecialAbility("frenm") AddSpecialAbility("frenm2") CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren01",Myself) Polymorph(FAT_MAN) Wait(1) EscapeAreaMove("AR0800",1784,1493,0) SetInterrupt(TRUE)~ EXIT
+	IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobal("FrennedanFlucht","GLOBAL",2) SetGlobal("FrennedanJoinedParty","GLOBAL",0) SetGlobal("FrennedanFriedhof","GLOBAL",1) SetGlobal("Fren_Polymorph","GLOBAL",3) SetGlobal("FrennedanSpeicher","GLOBAL",3) LeaveParty() AddSpecialAbility("frenm") AddSpecialAbility("frenm2") CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren01",Myself) Polymorph(FAT_MAN) Wait(1) SetInterrupt(TRUE) EscapeAreaMove("AR0800",1784,1493,0)~ EXIT
 END
 
 
@@ -385,7 +385,7 @@ IF ~Global("FrennedanUnterreich","GLOBAL",8)~ THEN BEGIN frenn28
 	SAY @82
 	=
 	@83
-	IF ~~ THEN DO ~SetGlobal("FrennedanSpeicher","GLOBAL",3) SetGlobal("FMorph","GLOBAL",1) SetGlobal("FrennedanUnterreich","GLOBAL",9) ReallyForceSpellRES("fraufw02",Myself) SetGlobal("FrennedanAufwertung","GLOBAL",0) ReallyForceSpellRES("fren10",Myself)~ EXIT
+	IF ~~ THEN DO ~SetGlobal("FrennedanSpeicher","GLOBAL",3) SetGlobal("Fren_Polymorph","GLOBAL",1) SetGlobal("FrennedanUnterreich","GLOBAL",9) ReallyForceSpellRES("frenw02",Myself) SetGlobal("FrennedanAufwertung","GLOBAL",0) ReallyForceSpellRES("fren10",Myself)~ EXIT
 END
 
 
@@ -513,14 +513,23 @@ APPEND ~VICONJ~
 	SAY @115
 	IF ~~ THEN EXTERN ~frenJ~ frenn24
 	END
-END
+END 
 
+///////// To verify
 ALTER_TRANS UDSILVER BEGIN 34 END BEGIN 0 END BEGIN "ACTION" ~SetGlobal("spoke2","LOCALS",1) SetGlobal("FrennedanUnterreich","GLOBAL",5)~ END
 
 
-ALTER_TRANS UDIMRAE BEGIN 4 END BEGIN 0 END BEGIN "TRIGGER" ~!InParty("frendan")~ END
+ALTER_TRANS UDIMRAE BEGIN 4 END BEGIN 0 END BEGIN "TRIGGER" ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)~ END
+	
 EXTEND_TOP UDIMRAE 4
-     IF ~InParty("frendan") !Dead("frendan")~ THEN EXTERN ~UDSOLA01~ 1 //frsola00
+     IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN EXTERN ~UDSOLA01~ 1 //frsola00
 END
 
 
@@ -531,7 +540,7 @@ APPEND ~UDSOLA01~
 	END
 END 
 
-
+///////// To verify
 ALTER_TRANS UDPHAE01 BEGIN 95 END BEGIN 0 END BEGIN "ACTION" ~SetGlobal("FrennedanHandlung","GLOBAL",1)~ END
 
 ALTER_TRANS c6ELHAN2 BEGIN 54 END BEGIN 0 END BEGIN "ACTION" ~ActionOverride("c6warsa1",ReallyForceSpell(Myself,DRYAD_TELEPORT)) ActionOverride("c6warsa2",ReallyForceSpell(Myself,DRYAD_TELEPORT)) SetGlobal("ElhanFinishedSpeaking","GLOBAL",1) SetGlobal("FrennedanUnterreich","GLOBAL",7)~ END
@@ -539,85 +548,183 @@ ALTER_TRANS c6ELHAN2 BEGIN 63 END BEGIN 0 END BEGIN "ACTION" ~ForceSpell("Viconi
 	
 
 INTERJECT_COPY_TRANS EDWIN 0 einmi00
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @117
-== EDWIN IF ~InParty("frendan") !Dead("frendan")~ THEN
+== EDWIN IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @118
 END
 
 
 INTERJECT_COPY_TRANS RIBALD 0 einmi01
-== frenJ IF ~InParty("frendan") Global("FrennedanEinmisch01","GLOBAL",0) !Global("FMorpH","GLOBAL",1) !Dead("frendan")~ THEN
+== frenJ IF ~Global("FrennedanEinmisch01","GLOBAL",0)
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+!Global("Fren_Polymorph","GLOBAL",1)
+	!Dead("frendan")~ THEN
   @119
-== RIBALD IF ~InParty("frendan") Global("FrennedanEinmisch01","GLOBAL",0) !Global("FMorph","GLOBAL",1) !Dead("frendan")~ THEN
+== RIBALD IF ~ Global("FrennedanEinmisch01","GLOBAL",0)
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+!Global("Fren_Polymorph","GLOBAL",1)
+	!Dead("frendan")~ THEN
   @120
-== frenJ IF ~InParty("frendan") Global("FrennedanEinmisch01","GLOBAL",0) !Global("FMorph","GLOBAL",1) !Dead("frendan")~ THEN
+== frenJ IF ~Global("FrennedanEinmisch01","GLOBAL",0)
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+!Global("Fren_Polymorph","GLOBAL",1)
+	!Dead("frendan")~ THEN
   @121 DO ~SetGlobal("FrennedanEinmisch01","GLOBAL",1)~
 END
 
 
 INTERJECT_COPY_TRANS BODHI 1 einmi02
-== frenJ IF ~InParty("frendan") !Global("FMorph","GLOBAL",1) !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+!Global("Fren_Polymorph","GLOBAL",1)
+	!Dead("frendan")~ THEN
   @122
-== BODHI IF ~InParty("frendan") !Global("FMorph","GLOBAL",1) !Dead("frendan")~ THEN
+== BODHI IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+!Global("Fren_Polymorph","GLOBAL",1)
+	!Dead("frendan")~ THEN
   @123
-== frenJ IF ~InParty("frendan") !Global("FMorph","GLOBAL",1) !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+!Global("Fren_Polymorph","GLOBAL",1)
+	!Dead("frendan")~ THEN
   @124
-== BODHI IF ~InParty("frendan") !Global("FMorph","GLOBAL",1) !Dead("frendan")~ THEN
+== BODHI IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+!Global("Fren_Polymorph","GLOBAL",1)
+	!Dead("frendan")~ THEN
   @125 = @126
 END
 
 
 INTERJECT_COPY_TRANS BODHI 6 einmi03
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @127
 END
 
 
 INTERJECT_COPY_TRANS INSPECT 9 einmi04
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @128
 END
 
 
 INTERJECT_COPY_TRANS PPBODHI3 10 einmi05
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @129
 END
 
 
 INTERJECT_COPY_TRANS PPDILI 0 einmi06
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @130
-== PPDILI IF ~InParty("frendan") !Dead("frendan")~ THEN
+== PPDILI IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @131
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @132
-== PPDILI IF ~InParty("frendan") !Dead("frendan")~ THEN
+== PPDILI IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @133
 END
 
 
 INTERJECT_COPY_TRANS PPIRENI1 33 einmi07
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @134
 END
 
 
 INTERJECT_COPY_TRANS PPBODHI4 1 einmi08
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @135
-== PPBODHI4 IF ~InParty("frendan") !Dead("frendan")~ THEN
+== PPBODHI4 IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @136
 END
 
 
 INTERJECT_COPY_TRANS UDDOOR01 3 einmi09
-== UDDOOR01 IF ~InParty("frendan") !Dead("frendan") !Name("Frennedan",LastTalkedToBy())~ THEN
+== UDDOOR01 IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")
+!Name("Frennedan",LastTalkedToBy())~ THEN
   @137
-== frenJ IF ~InParty("frendan") !Dead("frendan") !Name("Frennedan",LastTalkedToBy())~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")
+!Name("Frennedan",LastTalkedToBy())~ THEN
   @138
-== UDDOOR01 IF ~InParty("frendan") !Dead("frendan") !Name("Frennedan",LastTalkedToBy())~ THEN
+== UDDOOR01 IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")
+!Name("Frennedan",LastTalkedToBy())~ THEN
   @139 = @140
 END
 
@@ -632,95 +739,196 @@ END
 
 
 EXTEND_BOTTOM PLAYER1 25
-	IF ~IsValidForPartyDialog("frendan")~ THEN EXTERN frenJ 61
+	IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)~ THEN EXTERN frenJ 61
 END
 
 
 EXTEND_BOTTOM PLAYER1 33
-	IF ~IsValidForPartyDialog("frendan")~ THEN EXTERN PLAYER1 Frbaum
+	IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)~ THEN EXTERN PLAYER1 Frbaum
 END
 
 
 INTERJECT_COPY_TRANS RERAK01 5 einmi10
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @144
-== RERAK01 IF ~InParty("frendan") !Dead("frendan")~ THEN
+== RERAK01 IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @145
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @146
-== RERAK01 IF ~InParty("frendan") !Dead("frendan")~ THEN
+== RERAK01 IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @147
 END
 
 
 INTERJECT_COPY_TRANS PPIRENI2 35 einmi11
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @148
-== PPIRENI2 IF ~InParty("frendan") !Dead("frendan")~ THEN
+== PPIRENI2 IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @149
 END
 
 
 INTERJECT_COPY_TRANS PLAYER1 5 einmi12
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @150
 END
 
 
 INTERJECT_COPY_TRANS C6BODHI 1 eimi13
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @151
-== C6BODHI IF ~InParty("frendan") !Dead("frendan")~ THEN
+== C6BODHI IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @152
 END
 
 
 INTERJECT_COPY_TRANS ARAN 3 einmi14
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @153
-== ARAN IF ~InParty("frendan") !Dead("frendan")~ THEN
+== ARAN IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @154
 END
 
 
 INTERJECT_COPY_TRANS PPARAN2 3 einmi15
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @129
-== PPSAEM IF ~InParty("frendan") !Dead("frendan")~ THEN
+== PPSAEM IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @155
 END
 
 
 INTERJECT_COPY_TRANS PPSAEM 6 einmi16
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @156
-== PPSAEM IF ~InParty("frendan") !Dead("frendan")~ THEN
+== PPSAEM IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @157
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @158
-== PPSAEM IF ~InParty("frendan") !Dead("frendan")~ THEN
+== PPSAEM IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @159
 END
 
 
 INTERJECT_COPY_TRANS SUJON 14 einmi17
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @160
 END
 
 
 INTERJECT_COPY_TRANS HELLJON 7 einmi18
-== HELLJON IF ~InParty("frendan") !Dead("frendan")~ THEN
+== HELLJON IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @161
-== frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+== frenJ IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @162
-== HELLJON IF ~InParty("frendan") !Dead("frendan")~ THEN
+== HELLJON IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	!Dead("frendan")~ THEN
   @163
 END
 
 
-ALTER_TRANS SUELLE2 BEGIN 18 END BEGIN 0 END BEGIN "TRIGGER" ~!IsValidForPartyDialogue("frendan") ReputationLT(Player1,10)~ END
-ALTER_TRANS SUELLE2 BEGIN 18 END BEGIN 1 END BEGIN "TRIGGER" ~!IsValidForPartyDialogue("frendan") ReputationGT(Player1,9)~ END
+ALTER_TRANS SUELLE2 BEGIN 18 END BEGIN 0 END BEGIN "TRIGGER" ~OR(3)
+	!InParty("frendan")
+	!InMyArea("frendan")
+	StateCheck("frendan",CD_STATE_NOTVALID)
+ReputationLT(Player1,10)~ END
+ALTER_TRANS SUELLE2 BEGIN 18 END BEGIN 1 END BEGIN "TRIGGER" ~OR(3)
+	!InParty("frendan")
+	!InMyArea("frendan")
+	StateCheck("frendan",CD_STATE_NOTVALID)
+ReputationGT(Player1,9)~ END
 EXTEND_TOP SUELLE2 18
-		IF ~IsValidForPartyDialogue("frendan")~ THEN EXTERN ~frenJ~ 63
+		IF ~
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)~ THEN EXTERN ~frenJ~ 63
 END

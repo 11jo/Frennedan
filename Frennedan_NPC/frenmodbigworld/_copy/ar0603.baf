@@ -1,0 +1,15 @@
+IF
+InParty("frendan")
+InParty("D#Silver")
+Global("D#SilverSword","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("D#SilverSword","GLOBAL",1)
+Continue()
+END
+
+
+
+/////////// cROSSMOD WITH sILVERSTAR ?????
+
+// No it's a variable set by silverstar to adapt with Frennedan dialog modificaation

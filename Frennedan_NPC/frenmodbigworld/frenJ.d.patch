@@ -1,0 +1,20 @@
+--- frenmod\frenJ.d	Wed Jun 24 09:24:00 2009
++++ C:\BWP Patchstudio\patched files\frenmod\frenJ.d	Tue Jun 30 21:25:34 2015
+@@ -520,7 +520,7 @@
+ 
+ ALTER_TRANS UDIMRAE BEGIN 4 END BEGIN 0 END BEGIN "TRIGGER" ~!InParty("frendan")~ END
+ EXTEND_TOP UDIMRAE 4
+-     IF ~InParty("frendan") !Dead("frendan")~ THEN EXTERN ~UDSOLA01~ 1 //frsola00
++     IF ~InParty("frendan")~ THEN EXTERN ~UDSOLA01~ frsola00 // dead or alive, take new branch if Frennedan is in the party
+ END
+ 
+ 
+@@ -703,7 +703,7 @@
+ END
+ 
+ 
+-INTERJECT_COPY_TRANS SUJON 14 einmi17
++INTERJECT_COPY_TRANS2 SUJON 14 einmi17
+ == frenJ IF ~InParty("frendan") !Dead("frendan")~ THEN
+   @160
+ END

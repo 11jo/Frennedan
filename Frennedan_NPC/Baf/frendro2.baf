@@ -3,6 +3,8 @@ IF
 	!Global("DrowCityHostile","GLOBAL",1)
 	LOS(Player1,15)
 	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
 		SetGlobal("FrennedanNabeyue","GLOBAL",3)

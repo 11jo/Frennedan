@@ -4,6 +4,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("FrennedanSordrelCreateLerdros","GLOBAL",1)
-		CreateCreature("FRENDRO7",[1347.842],E)
+		CreateCreature("FRENDRO7",[1347.842],12)
 END
 

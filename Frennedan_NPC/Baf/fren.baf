@@ -44,7 +44,10 @@ END
 IF
 	Global("FrennedanInteract01","GLOBAL",1)
 	InParty(Myself)
-	IsValidForPartyDialogue("Edwin")
+	//IsValidForPartyDialogue("Edwin")
+	InParty("Edwin")
+	InMyArea("Edwin")
+	!StateCheck("Edwin",CD_STATE_NOTVALID)
 	GlobalTimerExpired("FrennedanInteractEdwin","GLOBAL")
 THEN
 	RESPONSE #100
@@ -126,7 +129,7 @@ THEN
 		StartDialogueNoSet(Player1)
 END
 
-
+////////// To traify
 IF
 	AttackedBy([PC.0.0],DEFAULT)
 	Allegiance(Myself,NEUTRAL)
@@ -135,8 +138,8 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("FrennedanSpeak","LOCALS",1)
-		SetGlobal("FMorph","GLOBAL",1)
-		ReallyForceSpellRES("fraufw02",Myself)
+		SetGlobal("Fren_Polymorph","GLOBAL",1)
+		ReallyForceSpellRES("frenw02",Myself)
 		DisplayStringHead(Myself,"Was?! Ihr greift mich an?!")
 		Wait(2)
 		DisplayStringHead(Myself,"Dann werde ich euch alle töten, ihr Dummköpfe!")
@@ -157,7 +160,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("FrennedanAufwertung","GLOBAL",1)
-		ReallyForceSpellRES("fraufw03",Myself)
+		ReallyForceSpellRES("frenw03",Myself)
 		ReallyForceSpell(Myself,RED_PILLAR_VISUAL)
 END
 
@@ -168,7 +171,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("FrennedanAufwertung","GLOBAL",2)
-		ReallyForceSpellRES("fraufw04",Myself)
+		ReallyForceSpellRES("frenw04",Myself)
 		ReallyForceSpell(Myself,RED_PILLAR_VISUAL)
 END
 
@@ -176,12 +179,12 @@ END
 IF
 	See(NearestEnemyOf(Myself))
 	ActuallyInCombat()
-	!Global("FMorph","GLOBAL",1)
+	!Global("Fren_Polymorph","GLOBAL",1)
 	!Global("FrennedanSpeicher","GLOBAL",4)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("FMorph","GLOBAL",1)
+		SetGlobal("Fren_Polymorph","GLOBAL",1)
 		CreateVisualEffectObject("SPFLESHS",Myself)
 		ReallyForceSpellRES("fren00",Myself)		
 		Polymorph(DOPPLEGANGER)
@@ -200,12 +203,12 @@ END
 
 IF
 	!ActuallyInCombat()
-	Global("FMorph","GLOBAL",1)
+	Global("Fren_Polymorph","GLOBAL",1)
 	Global("FrennedanSpeicher","GLOBAL",0)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("FMorph","GLOBAL",0)
+		SetGlobal("Fren_Polymorph","GLOBAL",0)
 		CreateVisualEffectObject("SPFLESHS",Myself)
 		ReallyForceSpellRES("fren01",Myself)
 		Polymorph(FAT_MAN)
@@ -223,12 +226,12 @@ END
 
 IF
 	!ActuallyInCombat()
-	Global("FMorph","GLOBAL",1)
+	Global("Fren_Polymorph","GLOBAL",1)
 	Global("FrennedanSpeicher","GLOBAL",2)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("FMorph","GLOBAL",2)
+		SetGlobal("Fren_Polymorph","GLOBAL",2)
 		CreateVisualEffectObject("SPFLESHS",Myself)
 		ReallyForceSpellRES("fren04",Myself)
 		Polymorph(BOY)
@@ -246,12 +249,12 @@ END
 
 IF
 	!ActuallyInCombat()
-	Global("FMorph","GLOBAL",1)
+	Global("Fren_Polymorph","GLOBAL",1)
 	Global("FrennedanSpeicher","GLOBAL",3)
 THEN
 	RESPONSE #20
 		SetInterrupt(FALSE)
-		SetGlobal("FMorph","GLOBAL",3)
+		SetGlobal("Fren_Polymorph","GLOBAL",3)
 		CreateVisualEffectObject("SPFLESHS",Myself)
 		ReallyForceSpellRES("fren01",Myself)
 		Polymorph(FAT_MAN)
@@ -267,7 +270,7 @@ THEN
 		SetInterrupt(TRUE)
 	RESPONSE #10
 		SetInterrupt(FALSE)
-		SetGlobal("FMorph","GLOBAL",3)
+		SetGlobal("Fren_Polymorph","GLOBAL",3)
 		CreateVisualEffectObject("SPFLESHS",Myself)
 		ReallyForceSpellRES("fren02",Myself)
 		Polymorph(NOBLE_MAN)
@@ -283,7 +286,7 @@ THEN
 		SetInterrupt(TRUE)
 	RESPONSE #20
 		SetInterrupt(FALSE)
-		SetGlobal("FMorph","GLOBAL",3)
+		SetGlobal("Fren_Polymorph","GLOBAL",3)
 		CreateVisualEffectObject("SPFLESHS",Myself)
 		ReallyForceSpellRES("fren03",Myself)
 		Polymorph(SLAVE)
@@ -299,7 +302,7 @@ THEN
 		SetInterrupt(TRUE)
 	RESPONSE #20
 		SetInterrupt(FALSE)
-		SetGlobal("FMorph","GLOBAL",3)
+		SetGlobal("Fren_Polymorph","GLOBAL",3)
 		CreateVisualEffectObject("SPFLESHS",Myself)
 		ReallyForceSpellRES("fren04",Myself)
 		Polymorph(BOY)
@@ -315,7 +318,7 @@ THEN
 		SetInterrupt(TRUE)
 	RESPONSE #10
 		SetInterrupt(FALSE)
-		SetGlobal("FMorph","GLOBAL",3)
+		SetGlobal("Fren_Polymorph","GLOBAL",3)
 		CreateVisualEffectObject("SPFLESHS",Myself)
 		ReallyForceSpellRES("fren05",Myself)
 		Polymorph(FIGHTER_MALE_ELF)
@@ -331,7 +334,7 @@ THEN
 		SetInterrupt(TRUE)
 	RESPONSE #10
 		SetInterrupt(FALSE)
-		SetGlobal("FMorph","GLOBAL",3)
+		SetGlobal("Fren_Polymorph","GLOBAL",3)
 		CreateVisualEffectObject("SPFLESHS",Myself)
 		ReallyForceSpellRES("fren06",Myself)
 		Polymorph(HARLOT_WOMAN)
@@ -347,7 +350,7 @@ THEN
 		SetInterrupt(TRUE)
 	RESPONSE #10
 		SetInterrupt(FALSE)
-		SetGlobal("FMorph","GLOBAL",3)
+		SetGlobal("Fren_Polymorph","GLOBAL",3)
 		CreateVisualEffectObject("SPFLESHS",Myself)
 		ReallyForceSpellRES("fren07",Myself)
 		Polymorph(THIEF_FEMALE_ELF)
@@ -388,7 +391,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("FrennedanTod","GLOBAL",0)
-		ReallyForceSpellRES("fraufw02",Myself)
+		ReallyForceSpellRES("frenw02",Myself)
 		SetGlobal("FrennedanAufwertung","GLOBAL",0)
 END
 
@@ -399,7 +402,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("FrennedanTod","GLOBAL",0)
-		ReallyForceSpellRES("frmind",Myself)
+		ReallyForceSpellRES("frenmind",Myself)
 END
 
 
@@ -411,7 +414,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("FrWaf","GLOBAL",0)
 		DestroyItem("fren02")
-		ReallyForceSpellRES("fraufw02",Myself)
+		ReallyForceSpellRES("frenw02",Myself)
 END
 
 
@@ -423,7 +426,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("FrWaf","GLOBAL",0)
 		DestroyItem("fren03")
-		ReallyForceSpellRES("fraufw03",Myself)
+		ReallyForceSpellRES("frenw03",Myself)
 END
 
 
@@ -435,7 +438,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("FrWaf","GLOBAL",0)
 		DestroyItem("fren04")
-		ReallyForceSpellRES("fraufw04",Myself)
+		ReallyForceSpellRES("frenw04",Myself)
 END
 
 
@@ -446,7 +449,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("FrWaf","GLOBAL",0)
 		DestroyItem("MINDFLAY")
-		ReallyForceSpellRES("frmind",Myself)
+		ReallyForceSpellRES("frenmind",Myself)
 END
 
 
@@ -462,9 +465,16 @@ END
 
 IF
 	Global("FrennedanTalkHC","GLOBAL",1)
-	IsValidForPartyDialogue("frendan")
+	//IsValidForPartyDialogue("frendan")
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
+	//IsValidForPartyDialogue("Edwin")
+	InParty("Edwin")
+	InMyArea("Edwin")
+	!StateCheck("Edwin",CD_STATE_NOTVALID)
 	See(Player1)
-	!StateCheck(Player1,STATE_SLEEPING)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!ActuallyInCombat()
 	GlobalTimerExpired("FrennedanHC1","GLOBAL")
 THEN
@@ -486,9 +496,12 @@ END
 
 IF
 	Global("FrennedanTalkHC","GLOBAL",4)
-	IsValidForPartyDialogue("frendan")
+	//IsValidForPartyDialogue("frendan")
+	InParty("frendan")
+	InMyArea("frendan")
+	!StateCheck("frendan",CD_STATE_NOTVALID)
 	See(Player1)
-	!StateCheck(Player1,STATE_SLEEPING)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!ActuallyInCombat()
 	GlobalTimerExpired("FrennedanHC2","GLOBAL")
 THEN
