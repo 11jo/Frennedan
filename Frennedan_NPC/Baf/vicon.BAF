@@ -12,7 +12,7 @@ END
 IF
 	Global("FrennedanInteractViconia","GLOBAL",1)
 	InParty(Myself)
-	IfValidForPartyDialog("frendan")
+	IfValidForPartyDialogue("frendan")
 	GlobalTimerExpired("ViconiaIntFrennedan","GLOBAL")
 THEN
 	RESPONSE #100

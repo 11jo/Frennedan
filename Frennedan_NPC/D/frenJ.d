@@ -42,7 +42,15 @@ END
 
 IF ~~ THEN BEGIN 5
   SAY #12637 /* ~Aaaah! Ihr wollt einem alten, schwachen Mann nicht helfen?~ */
-  IF ~~ THEN DO ~SetGlobal("FrennedanFirstMeet","GLOBAL",2) SetGlobal("Fren_Polymorph","GLOBAL",1) SetGlobal("FrennedanSpeicher","GLOBAL",2) SmallWait(7) CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren04",Myself) Polymorph(BOY) Wait(1) StartDialogueNoSet(Player1)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("FrennedanFirstMeet","GLOBAL",2)
+					SetGlobal("Fren_Polymorph","GLOBAL",1)
+					SetGlobal("FrennedanSpeicher","GLOBAL",2)
+					SmallWait(7)
+					CreateVisualEffectObject("SPFLESHS",Myself)
+					ReallyForceSpellRES("fren04",Myself)
+					Polymorph(BOY)
+					Wait(1)
+					StartDialogueNoSet(Player1)~ EXIT
 END
 
 
@@ -84,7 +92,8 @@ END
 
 IF ~~ THEN BEGIN frei2
   SAY #12650 /* ~Nein, nein, bitte! Wollt Ihr nicht mal einem kleinen Jungen helfen? Oooooh...~ */
-  IF ~~ THEN DO ~SetGlobal("FrennedanFirstMeet","GLOBAL",3) ReallyForceSpellRES("frenw02",Myself)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("FrennedanFirstMeet","GLOBAL",3)
+					ReallyForceSpellRES("frenw02",Myself)~ EXIT
 END
 
 
@@ -97,7 +106,8 @@ END
 
 IF ~~ THEN BEGIN frei4
   SAY #12657 /* ~Danke! Oh, danke vielmals! Bitte beeilt Euch!~ */
-  IF ~~ THEN DO ~SetGlobal("FrennedanFirstMeet","GLOBAL",3) ReallyForceSpellRES("frenw02",Myself)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("FrennedanFirstMeet","GLOBAL",3)
+					ReallyForceSpellRES("frenw02",Myself)~ EXIT
 END
 
 
@@ -137,13 +147,25 @@ END
 
 IF ~~ THEN BEGIN fren4
 	SAY #12662 /* ~Wie? Unversch‰mtes Pack!~ */
-	IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobal("frennedanFirstMeet","GLOBAL",5) SetGlobal("Fren_Polymorph","GLOBAL",1) SetGlobal("FrennedanSpeicher","GLOBAL",1) SmallWait(7) CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren00",Myself) Polymorph(DOPPLEGANGER) Wait(2) ChangeAIScript("WTASIGHT",DEFAULT) Enemy() SetInterrupt(TRUE)~ EXIT
+	IF ~~ THEN DO ~SetInterrupt(FALSE)
+					SetGlobal("frennedanFirstMeet","GLOBAL",5)
+					SetGlobal("Fren_Polymorph","GLOBAL",1)
+					SetGlobal("FrennedanSpeicher","GLOBAL",1)
+					SmallWait(7)
+					CreateVisualEffectObject("SPFLESHS",Myself)
+					ReallyForceSpellRES("fren00",Myself)
+					Polymorph(DOPPLEGANGER) Wait(2)
+					ChangeAIScript("WTASIGHT",DEFAULT)
+					Enemy()
+					SetInterrupt(TRUE)~ EXIT
 END
 
 
 IF ~~ THEN BEGIN fren5
 	SAY #12669 /* ~Ich kann es kaum erwarten, diesem entsetzlichen Ort endlich zu entkommen. Danke, dass ihr mir erlaubt, Euch nach drauﬂen zu folgen, <LADYLORD>.~ */
-	IF ~~ THEN DO ~SetGlobal("frennedanFirstMeet","GLOBAL",5) SetGlobal("frennedanJoinedParty","GLOBAL",1) JoinParty()~ EXIT
+	IF ~~ THEN DO ~SetGlobal("frennedanFirstMeet","GLOBAL",5)
+					SetGlobal("frennedanJoinedParty","GLOBAL",1)
+					JoinParty()~ EXIT
 END
 
 
@@ -192,7 +214,18 @@ END
 
 IF ~~ THEN BEGIN frenn5
 	SAY @27
-	IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobal("Fren_Polymorph","GLOBAL",100) SetGlobal("FrennedanFlucht","GLOBAL",2) LeaveParty() SmallWait(7) CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren00",Myself) Polymorph(DOPPLEGANGER) Wait(1) ChangeAIScript("WTASIGHT",DEFAULT) Enemy() SetInterrupt(TRUE)~ EXIT
+	IF ~~ THEN DO ~SetInterrupt(FALSE)
+					SetGlobal("Fren_Polymorph","GLOBAL",100)
+					SetGlobal("FrennedanFlucht","GLOBAL",2)
+					LeaveParty()
+					SmallWait(7)
+					CreateVisualEffectObject("SPFLESHS",Myself)
+					ReallyForceSpellRES("fren00",Myself)
+					Polymorph(DOPPLEGANGER)
+					Wait(1)
+					ChangeAIScript("WTASIGHT",DEFAULT)
+					Enemy()
+					SetInterrupt(TRUE)~ EXIT
 END
 
 
@@ -207,7 +240,17 @@ END
 
 IF ~~ THEN BEGIN frenn7
 	SAY @35 = @36
-	IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobal("FrennedanFlucht","GLOBAL",2) SetGlobal("Fren_Polymorph","GLOBAL",3) SetGlobal("FrennedanSpeicher","GLOBAL",3) CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren08",Myself) Polymorph(FIGHTER_MALE_HUMAN) AddSpecialAbility("frenm") AddSpecialAbility("frenm2") AddSpecialAbility("frenm3") SetInterrupt(TRUE)~ EXIT
+	IF ~~ THEN DO ~SetInterrupt(FALSE)
+					SetGlobal("FrennedanFlucht","GLOBAL",2)
+					SetGlobal("Fren_Polymorph","GLOBAL",3)
+					SetGlobal("FrennedanSpeicher","GLOBAL",3)
+					CreateVisualEffectObject("SPFLESHS",Myself)
+					ReallyForceSpellRES("fren08",Myself)
+					Polymorph(FIGHTER_MALE_HUMAN)
+					AddSpecialAbility("frenm")
+					AddSpecialAbility("frenm2")
+					AddSpecialAbility("frenm3")
+					SetInterrupt(TRUE)~ EXIT
 END
 
 
@@ -221,7 +264,20 @@ END
 
 IF ~~ THEN BEGIN frenn9
 	SAY @40
-	IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobal("FrennedanFlucht","GLOBAL",2) SetGlobal("FrennedanJoinedParty","GLOBAL",0) SetGlobal("FrennedanFriedhof","GLOBAL",1) SetGlobal("Fren_Polymorph","GLOBAL",3) SetGlobal("FrennedanSpeicher","GLOBAL",3) LeaveParty() AddSpecialAbility("frenm") AddSpecialAbility("frenm2") CreateVisualEffectObject("SPFLESHS",Myself) ReallyForceSpellRES("fren01",Myself) Polymorph(FAT_MAN) Wait(1) SetInterrupt(TRUE) EscapeAreaMove("AR0800",1784,1493,0)~ EXIT
+	IF ~~ THEN DO ~SetInterrupt(FALSE)
+					SetGlobal("FrennedanFlucht","GLOBAL",2)
+					SetGlobal("FrennedanJoinedParty","GLOBAL",0)
+					SetGlobal("FrennedanFriedhof","GLOBAL",1)
+					SetGlobal("Fren_Polymorph","GLOBAL",3)
+					SetGlobal("FrennedanSpeicher","GLOBAL",3)
+					LeaveParty() AddSpecialAbility("frenm")
+					AddSpecialAbility("frenm2")
+					CreateVisualEffectObject("SPFLESHS",Myself)
+					ReallyForceSpellRES("fren01",Myself)
+					Polymorph(FAT_MAN)
+					Wait(1)
+					SetInterrupt(TRUE)
+					EscapeAreaMove("AR0800",1784,1493,0)~ EXIT
 END
 
 
@@ -294,7 +350,8 @@ END
 
 IF ~~ THEN BEGIN frenn20
 	SAY @61 = @62
-	IF ~~ THEN REPLY @63 DO ~SetGlobal("FrennedanUnterreich","GLOBAL",4) LeaveParty()~ EXIT
+	IF ~~ THEN REPLY @63 DO ~SetGlobal("FrennedanUnterreich","GLOBAL",4)
+							LeaveParty()~ EXIT
 END
 
 
@@ -369,15 +426,25 @@ END
 
 IF ~~ THEN BEGIN 64
 	SAY @80
-	IF ~ReputationLT(Player1,10)~ DO ~LeaveParty() ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
-	IF ~ReputationGT(Player1,9)~ DO ~LeaveParty() ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+	IF ~ReputationLT(Player1,10)~ DO ~LeaveParty()
+										ClearAllActions()
+										StartCutSceneMode()
+										StartCutScene("cut100a")~ EXIT
+	IF ~ReputationGT(Player1,9)~ DO ~LeaveParty()
+										ClearAllActions()
+										StartCutSceneMode()
+										StartCutScene("cut100b")~ EXIT
 END
 
 
 IF ~~ THEN BEGIN 65
 	SAY @81
-	IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100a")~ EXIT
-	IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("cut100b")~ EXIT
+	IF ~ReputationLT(Player1,10)~ DO ~ClearAllActions()
+										StartCutSceneMode()
+										StartCutScene("cut100a")~ EXIT
+	IF ~ReputationGT(Player1,9)~ DO ~ClearAllActions()
+										StartCutSceneMode()
+										StartCutScene("cut100b")~ EXIT
 END
 
 
@@ -385,7 +452,12 @@ IF ~Global("FrennedanUnterreich","GLOBAL",8)~ THEN BEGIN frenn28
 	SAY @82
 	=
 	@83
-	IF ~~ THEN DO ~SetGlobal("FrennedanSpeicher","GLOBAL",3) SetGlobal("Fren_Polymorph","GLOBAL",1) SetGlobal("FrennedanUnterreich","GLOBAL",9) ReallyForceSpellRES("frenw02",Myself) SetGlobal("FrennedanAufwertung","GLOBAL",0) ReallyForceSpellRES("fren10",Myself)~ EXIT
+	IF ~~ THEN DO ~SetGlobal("FrennedanSpeicher","GLOBAL",3)
+					SetGlobal("Fren_Polymorph","GLOBAL",1)
+					SetGlobal("FrennedanUnterreich","GLOBAL",9)
+					ReallyForceSpellRES("frenw02",Myself)
+					SetGlobal("FrennedanAufwertung","GLOBAL",0)
+					ReallyForceSpellRES("fren10",Myself)~ EXIT
 END
 
 
@@ -524,12 +596,9 @@ ALTER_TRANS UDIMRAE BEGIN 4 END BEGIN 0 END BEGIN "TRIGGER" ~
 	InMyArea("frendan")
 	!StateCheck("frendan",CD_STATE_NOTVALID)~ END
 	
-EXTEND_TOP UDIMRAE 4
+EXTEND_TOP UDIMRAE 4 // Interject ?
      IF ~
-	InParty("frendan")
-	InMyArea("frendan")
-	!StateCheck("frendan",CD_STATE_NOTVALID)
-	!Dead("frendan")~ THEN EXTERN ~UDSOLA01~ 1 //frsola00
+	InPartyAllowDead("frendan")~ THEN EXTERN ~UDSOLA01~ 1 // frsola00  // BWP Fix
 END
 
 
@@ -543,8 +612,18 @@ END
 ///////// To verify
 ALTER_TRANS UDPHAE01 BEGIN 95 END BEGIN 0 END BEGIN "ACTION" ~SetGlobal("FrennedanHandlung","GLOBAL",1)~ END
 
-ALTER_TRANS c6ELHAN2 BEGIN 54 END BEGIN 0 END BEGIN "ACTION" ~ActionOverride("c6warsa1",ReallyForceSpell(Myself,DRYAD_TELEPORT)) ActionOverride("c6warsa2",ReallyForceSpell(Myself,DRYAD_TELEPORT)) SetGlobal("ElhanFinishedSpeaking","GLOBAL",1) SetGlobal("FrennedanUnterreich","GLOBAL",7)~ END
-ALTER_TRANS c6ELHAN2 BEGIN 63 END BEGIN 0 END BEGIN "ACTION" ~ForceSpell("Viconia",FLASHY_1) ActionOverride("c6warsa1",ReallyForceSpell(Myself,DRYAD_TELEPORT)) ActionOverride("c6warsa2",ReallyForceSpell(Myself,DRYAD_TELEPORT)) SetGlobal("ElhanFinishedSpeaking","GLOBAL",1) SetGlobal("FrennedanUnterreich","GLOBAL",7)~ END
+ALTER_TRANS c6ELHAN2 BEGIN 54 END BEGIN 0 END BEGIN "ACTION" ~
+				ActionOverride("c6warsa1",ReallyForceSpell(Myself,DRYAD_TELEPORT))
+				ActionOverride("c6warsa2",ReallyForceSpell(Myself,DRYAD_TELEPORT))
+				SetGlobal("ElhanFinishedSpeaking","GLOBAL",1)
+				SetGlobal("FrennedanUnterreich","GLOBAL",7)~ END
+
+ALTER_TRANS c6ELHAN2 BEGIN 63 END BEGIN 0 END BEGIN "ACTION" ~
+				ForceSpell("Viconia",FLASHY_1)
+				ActionOverride("c6warsa1",ReallyForceSpell(Myself,DRYAD_TELEPORT))
+				ActionOverride("c6warsa2",ReallyForceSpell(Myself,DRYAD_TELEPORT))
+				SetGlobal("ElhanFinishedSpeaking","GLOBAL",1)
+				SetGlobal("FrennedanUnterreich","GLOBAL",7)~ END
 	
 
 INTERJECT_COPY_TRANS EDWIN 0 einmi00
@@ -921,12 +1000,14 @@ ALTER_TRANS SUELLE2 BEGIN 18 END BEGIN 0 END BEGIN "TRIGGER" ~OR(3)
 	!InMyArea("frendan")
 	StateCheck("frendan",CD_STATE_NOTVALID)
 ReputationLT(Player1,10)~ END
+
 ALTER_TRANS SUELLE2 BEGIN 18 END BEGIN 1 END BEGIN "TRIGGER" ~OR(3)
 	!InParty("frendan")
 	!InMyArea("frendan")
 	StateCheck("frendan",CD_STATE_NOTVALID)
 ReputationGT(Player1,9)~ END
-EXTEND_TOP SUELLE2 18
+
+EXTEND_TOP SUELLE2 18 // Interject ?
 		IF ~
 	InParty("frendan")
 	InMyArea("frendan")

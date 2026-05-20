@@ -1,4 +1,4 @@
-BACKUP ~Frennedan_NPC/backup~
+BACKUP ~weidu_external/Frennedan_NPC/backup~
 AUTHOR ~jastey@web.de~ //Nicolas Peters - darthsabe@web.de~
 
 VERSION ~1.03~
@@ -85,17 +85,65 @@ COPY ~Frennedan_NPC/Portraits/fren09L.bmp~ ~override/fren09L.bmp~
 COPY ~Frennedan_NPC/Portraits/fren09S.bmp~ ~override/fren09S.bmp~
 
 // copy charakter-script and creature-file
-COMPILE ~Frennedan_NPC/Baf/fren.baf~
-	USING ~~
-COPY ~Frennedan_NPC/Cre/SHAPE.cre~ ~override/SHAPE.cre~
+COMPILE ~Frennedan_NPC/Baf/fren.baf~ // USING ~~
+COPY_EXISTING ~SHAPE.cre~ ~override~ // BWP Fix
 SAY NAME1 @2
 SAY NAME2 @2
 SAY BIO @3
+WRITE_LONG 0x14 ~6000~
+WRITE_LONG 0x18 ~850000~
+WRITE_SHORT 0x24 ~79~
+WRITE_SHORT 0x26 ~79~
+WRITE_BYTE 0x2c 27
+WRITE_BYTE 0x2d 18
+WRITE_BYTE 0x2e 20
+WRITE_BYTE 0x2f 84
+WRITE_BYTE 0x30 26
+WRITE_BYTE 0x31 30
+WRITE_BYTE 0x32 84
+WRITE_ASCII 0x34 ~FREN01S~ #8
+WRITE_ASCII 0x3c ~FREN01L~ #8
+WRITE_SHORT 0x46 ~-4~
+WRITE_BYTE 0x52 6
+WRITE_BYTE 0x54 8
+WRITE_BYTE 0x55 10
+WRITE_BYTE 0x56 4
+WRITE_BYTE 0x57 9
+WRITE_BYTE 0x58 11
+WRITE_BYTE 0x5d 35
+WRITE_BYTE 0x60 0
+WRITE_BYTE 0x61 0
+WRITE_BYTE 0x62 0
+WRITE_BYTE 0x63 0
+WRITE_BYTE 0x66 24
+WRITE_BYTE 0x234 11
+WRITE_BYTE 0x235 0
+WRITE_BYTE 0x236 0
+WRITE_BYTE 0x237 1
+WRITE_BYTE 0x23f 10
+WRITE_BYTE 0x240 0
+WRITE_BYTE 0x242 1
+WRITE_ASCII 0x248 ~FREN~ #8
+WRITE_ASCII 0x250 ~~ #8
+WRITE_ASCII 0x258 ~~ #8
+WRITE_ASCII 0x260 ~~ #8
+WRITE_ASCII 0x268 ~~ #8
+WRITE_BYTE 0x273 2
+WRITE_BYTE 0x275 1
+WRITE_ASCII 0x280 ~FRENDAN~ #32
+WRITE_ASCII 0x2cc ~FRENJ~ #8
+ADD_CRE_ITEM ~FREN01~ #0 #0 #0 ~NONE~ ~ARMOR~
+ADD_CRE_ITEM ~FREN02~ #0 #0 #0 ~NONE~ ~WEAPON~
 
 // extend scripts
 EXTEND_BOTTOM ~VICONIA.bcs~ ~Frennedan_NPC/Baf/vicon.baf~
 EXTEND_BOTTOM ~UDDOOR2.bcs~ ~Frennedan_NPC/Baf/UDDOOR2.baf~
 EXTEND_BOTTOM ~UDDOOR3.bcs~ ~Frennedan_NPC/Baf/UDDOOR3.baf~
+
+// Silver star comptat // BWP Fix
+ACTION_IF (MOD_IS_INSTALLED ~Star.tp2~ 0) BEGIN
+	EXTEND_BOTTOM ~AR0603.BCS~ ~frenmod/AR0603.baf~
+END
 
 
 // copy spells and items
@@ -183,10 +231,8 @@ SAY DESC @17
 
 
 // compile dialogues
-COMPILE ~Frennedan_NPC/D/frenJ.d~
-USING ~~
-COMPILE ~Frennedan_NPC/D/frenP.d~
-USING ~~
+COMPILE ~Frennedan_NPC/D/frenJ.d~ // USING ~~
+COMPILE ~Frennedan_NPC/D/frenP.d~ // USING ~~
 
 // append 2da entries
 APPEND ~pdialog.2da~
@@ -205,84 +251,72 @@ EXTEND_BOTTOM ~AR2200.bcs~ ~Frennedan_NPC/Baf/AR2200.baf~
 EXTEND_BOTTOM ~AR2100.bcs~ ~Frennedan_NPC/Baf/AR2100.baf~
 EXTEND_BOTTOM ~DWCITY.bcs~ ~Frennedan_NPC/Baf/dwcity.baf~
 
-COMPILE ~Frennedan_NPC/Baf/frendro1.baf~
-	USING ~~
-COMPILE ~Frennedan_NPC/Baf/frendro2.baf~
-	USING ~~
-COMPILE ~Frennedan_NPC/Baf/frendro3.baf~
-	USING ~~
-COMPILE ~Frennedan_NPC/Baf/frendro8.baf~
-	USING ~~
-COMPILE ~Frennedan_NPC/Baf/frcut01.baf~
-	USING ~~
-COMPILE ~Frennedan_NPC/D/frendro1.d~
-	USING ~~
-COMPILE ~Frennedan_NPC/D/frendro2.d~
-	USING ~~
-COMPILE ~Frennedan_NPC/D/frendro3.d~
-	USING ~~
-COMPILE ~Frennedan_NPC/D/frendro4.d~
-	USING ~~
-COMPILE ~Frennedan_NPC/D/frendro5.d~
-	USING ~~
-COMPILE ~Frennedan_NPC/D/frendro6.d~
-	USING ~~
-COMPILE ~Frennedan_NPC/D/frendro7.d~
-	USING ~~
+COMPILE ~Frennedan_NPC/Baf/frendro1.baf~ // USING ~~
+COMPILE ~Frennedan_NPC/Baf/frendro2.baf~ // USING ~~
+COMPILE ~Frennedan_NPC/Baf/frendro3.baf~ // USING ~~
+COMPILE ~Frennedan_NPC/Baf/frendro8.baf~ // USING ~~
+COMPILE ~Frennedan_NPC/Baf/frcut01.baf~ // USING ~~
+COMPILE ~Frennedan_NPC/D/frendro1.d~ // USING ~~
+COMPILE ~Frennedan_NPC/D/frendro2.d~ // USING ~~
+COMPILE ~Frennedan_NPC/D/frendro3.d~ // USING ~~
+COMPILE ~Frennedan_NPC/D/frendro4.d~ // USING ~~
+COMPILE ~Frennedan_NPC/D/frendro5.d~ // USING ~~
+COMPILE ~Frennedan_NPC/D/frendro6.d~ // USING ~~
+COMPILE ~Frennedan_NPC/D/frendro7.d~ // USING ~~
 
 COPY ~Frennedan_NPC/Cre/frendro1.cre~ ~override/frendro1.cre~
 	SAY NAME1 @18
 	SAY NAME2 @18
 		WRITE_ASCII SCRIPT_OVERRIDE ~frendro1~ (8)
-		WRITE_ASCII DEATHVAR ~frendro1~
+		WRITE_ASCII DEATHVAR ~frendro1~ (32)
 		WRITE_ASCII DIALOG ~frendro1~ (8)
 
 COPY ~Frennedan_NPC/Cre/frendro2.cre~ ~override/frendro2.cre~
 	SAY NAME1 @19
 	SAY NAME2 @19
 		WRITE_ASCII SCRIPT_OVERRIDE ~frendro2~ (8)
-		WRITE_ASCII DEATHVAR ~frendro2~ // Nabeyue
+		WRITE_ASCII DEATHVAR ~frendro2~ (32) // Nabeyue
 		WRITE_ASCII DIALOG ~frendro2~ (8)
 
 COPY ~Frennedan_NPC/Cre/frendro3.cre~ ~override/frendro3.cre~
 	SAY NAME1 @20
 	SAY NAME2 @20
 		WRITE_ASCII SCRIPT_OVERRIDE ~frendro3~ (8)
-		WRITE_ASCII DEATHVAR ~frendro3~ // Lilfaeri
+		WRITE_ASCII DEATHVAR ~frendro3~ (32) // Lilfaeri
 		WRITE_ASCII DIALOG ~frendro3~ (8)
 
 COPY ~Frennedan_NPC/Cre/frendro4.cre~ ~override/frendro4.cre~
 	SAY NAME1 @21
 	SAY NAME2 @21
 		//WRITE_ASCII SCRIPT_OVERRIDE ~frendro1~ (8)
-		WRITE_ASCII DEATHVAR ~frendro4~
+		WRITE_ASCII DEATHVAR ~frendro4~ (32)
 		WRITE_ASCII DIALOG ~frendro4~ (8)
 
 COPY ~Frennedan_NPC/Cre/frendro5.cre~ ~override/frendro5.cre~
 	SAY NAME1 @22
 	SAY NAME2 @22
 		//WRITE_ASCII SCRIPT_OVERRIDE ~frendro1~ (8)
-		WRITE_ASCII DEATHVAR ~frendro5~ // Gesstr
+		WRITE_ASCII DEATHVAR ~frendro5~ (32) // Gesstr
 		WRITE_ASCII DIALOG ~frendro5~ (8)
 
 COPY ~Frennedan_NPC/Cre/frendro6.cre~ ~override/frendro6.cre~
 	SAY NAME1 @23
 	SAY NAME2 @23
 		//WRITE_ASCII SCRIPT_OVERRIDE ~frendro1~ (8)
-		WRITE_ASCII DEATHVAR ~frendro6~
+		WRITE_ASCII DEATHVAR ~frendro6~ (32)
 		WRITE_ASCII DIALOG ~frendro6~ (8)
 
 COPY ~Frennedan_NPC/Cre/frendro7.cre~ ~override/frendro7.cre~
 	SAY NAME1 @24
 	SAY NAME2 @24
 		//WRITE_ASCII SCRIPT_OVERRIDE ~frendro7~ (8)
-		WRITE_ASCII DEATHVAR ~frendro7~ // udsvir05
+		WRITE_ASCII DEATHVAR ~frendro7~ (32)// udsvir05
 		WRITE_ASCII DIALOG ~frendro7~ (8)
 
 COPY ~Frennedan_NPC/Cre/frendro8.cre~ ~override/frendro8.cre~
 	SAY NAME1 @25
 	SAY NAME2 @25
 		WRITE_ASCII SCRIPT_OVERRIDE ~frendro8~ (8)
-		WRITE_ASCII DEATHVAR ~frendro8~
+		WRITE_ASCII DEATHVAR ~frendro8~ (32)
 		WRITE_ASCII DIALOG ~frendro7~ (8) // Same as frendro7.cre
 
